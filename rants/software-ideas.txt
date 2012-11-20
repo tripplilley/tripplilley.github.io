@@ -1,0 +1,2531 @@
+
+* I'd like some software that allowed me to "tag" web pages and drop
+them in a queue with some associated task. For instance, I just
+bookmarked a Dvorak article that I want to link to in one of my
+journal entries. He talks about the death of innovation and I think
+he's full of bullshit. So I need tools that let me do that.
+
+* An ideal mailing list manager would allow individuals to set their
+"reply-to" preferences to be whatever they pleased, thus ending once
+and for all the various bickerings over "reply-to" settings!
+
+* tab-completion in bash is way cool, but I'd like better control over
+context. That is, if I type 'ssh cr<tab>', I'd like it to know that
+ssh is a network tool, and that therefore it should try to complete
+based on frequently-used hostnames. These, of course, should be
+discovered by hooking the DNS resolver. But then there should be more
+context for that hooking, because you don't want to call frequently
+used websites the same as frequently used ssh
+destinations... Hmm. Interesting ideas for a more holistic operating
+system here.
+
+* Interesting thing about interaction between Perforce and your
+programming language / environment of choice: let's say you have a
+certain "layout" in the depot. And you sync to a client workspace that 
+has that "layout" mapped differently into local filespace. So then you 
+start writing code that, somehow or another, depends on the mapping in 
+your *local* filespace. Then someone else syncs to your code using
+their *own* local mapping, and everything's broken. This is not so
+much a Perforce problem, per se, but a problem stemming from a lack of 
+a more holistic view of these systems interactions...
+
+* One thing I don't like about Perforce's job system is that it
+doesn't have any way of "filtering" jobs that I can tell. That is,
+I'd like to be able to designate some jobs as "systems" jobs (or, even 
+better, "systems documentation" jobs versus "systems scripting" jobs
+and so forth). Then, I'd like just the jobs relevant to the file I'm
+working on to show in its list... So, if I'm editing the systems docs
+and I do a submit, that doc has 'systems' and 'docs' tags linked to
+it, so I only see 'systems' and 'docs' jobs (or 'systems + docs' jobs
+listed first, followed by 'systems' jobs, followed by 'docs' jobs,
+followed by everything else? Maybe...)
+
+* My make replacement ought not just use MD5 hashes like cons, but
+ought to actually have plugin "contextual" diff things. That way, for
+instance, you could diff a word or XML file based on structure (ie:
+"real" content), not just on byte-pattern. Actually we might just
+extend this notion into a more universal diff program, then have the
+make replacement use the diff program as a more general way of
+determining rebuild necessity (ie: it always rebuilds if it detects
+the file is "different" than it was last time you built, but how it
+determines "difference" depends on how you invoke diff?)
+
+* The editor/IDE should be total polymorphic, so that vi and emacs and 
+Visual Studio and so forth bigots are all equally at home.
+
+* The editor/IDE/development ideology should support lots of selective 
+display / hiding of information and such. For instance, I'm always
+writing in lots of code that's only useful in 'debug' mode. I'd like
+to be able to hide this stuff and just see what the meat of the code
+is. More to the point, though, I'd like to be able to *mark* that
+stuff as debug code, structurally, so that the system can make
+intelligent decisions. However, debug code should always be
+*available* to the system (ie: if everything's interpreted and runtime 
+bound and all that, you can always turn on/off debugging on the
+fly. If debugging is off, there's no performance penalty for checks to 
+"am I debugging?" flags, because the code is actually physically
+sidestepped or even *removed*, but when you turn debugging back on,
+it's reinserted).
+
+* This whole idea of 'ENVIRONMENT' variables is interesting. Where did
+it come from, exactly? Anyway, I think it would be nice if the
+environment was a more alive, fluid thing. That is, if I make changes
+to my environment, I'd like to choose whether the default was for
+those changes to propagate throughout all of my running entities, or
+if they should remain within whatever scope I'm in. Furthermore, I
+should be able to (easily) choose whether changes propagate downward
+to children, and so forth. Finally, I should be able to choose whether 
+or not changes are persistent. To me, it makes more sense to shape the 
+thing the way you want it, like clay, and just leave it be when you're 
+done. Rather than "configuring" it by editing files and restarting and 
+such... Of course, the files mechanism *does* have some advantages
+that we should maintain... like the ability to isolate changes, test
+them, and so forth. But a sufficiently pervasive transactions
+mechanism ought to let us achieve these same benefits...
+
+* Emacs and XEmacs are wonderful, profoundly malleable programs. But
+DAMMIT, they were *clearly* designed by PROGRAMMERS for
+PROGRAMMERS. Even though I like to think of myself as a *fantastic*
+programmer, sometimes I DON'T WANT TO BE!!! Sometimes I just want to
+click through a little menu thingy and say "hey, emacs, fucking turn
+on auto-fill on ALL FILES, and put me in FUNDAMENTAL MODE for
+everything *you* think is a TEXT file!!". And I'd like to not have to
+remember to re-edit files.el to break the .txt == text-mode mapping
+when I upgrade my emacs!! (since files.el is part of the distribution, 
+and not part of the site-lisp). Yes, I'm aware that I could write code 
+that would take 'auto-mode-alist' and seek and destroy the offending
+entry. But come *on*... *Sometimes*, I want to just be a dumb user :-)
+
+* The package manager should understand ideas like which hardware
+resources a package requires (or has an affinity for, etc.). It should 
+prompt you to install "recommended" packages when you install a new
+piece of hardware (ie: plug and play, if you will). It should be more
+intelligent than Windows about this, though :-) It should allow you to 
+easily scrape out everything that depends on a particular piece of
+hardware. The particular example(s) I have in mind are the
+Soundblaster AWE stuff for Linux, and kernel modules in general.
+
+* RPM supports a 'netsharedpath' which allows you to note that a
+particular directory is a 'shared path', and so rpm shouldn't erase
+files from there since they're shared among machines. However, there
+doesn't seem to be any facility for managing these things at a higher
+level. That is, how do you upgrade or erase or whatever packages that
+are installed on your cluster, when parts of the package are shared,
+and parts are on each machine? And how do you deal with the case where 
+machines have different versions of the package, even though some
+pieces are shared and other pieces are per-machine? And the different
+versions of the package still share filenames... Yuck :-)
+
+(note that you could probably get some similar behaviour using RPM if
+you were to make hackish use of --dbpath and --root, and have all of
+your clients' filesystems mounted by your server, and stuff. You could 
+get away with some real ugliness then :-) ).
+
+* package manager should be "process safe" (like thread safe, only for 
+multiple users). For instance, if you run a little GUI package manager 
+tool all the time, when changes happen to the package manager
+database, that tool should get updates that those changes
+happened.
+
+* Do this: install an RPM that puts things into the /etc/rc.d/init.d
+hierarchy. Then change things around with chkconfig. Then run rpm
+-V. Note that rpm -V reports some errors, since chkconfig has changed
+the symlinks and such that the original RPM installed. There ought to
+be some way of chkconfig annotating what changes you made to the
+original state of the rpm. That is, some sort of transactional
+mechanism (oh, here we go again :-) ).
+
+* it would be nice to be able to find out specifically *why* a certain 
+package has a dependancy on another. For instance, initscripts
+apparently depends on console-tools, but there's no specific mention
+of *why* it depends on it. To that end, it ought to be possible to be
+more granular in installing packages (that is, packages ought to be
+sort of a meta object composed of other objects, so, for instance,
+something might be dependant specifically on 'foo', with package 'bar' 
+providing 'foo', but you could just install 'foo' from 'bar' and be
+okay). I guess I'm looking for some way of building up packages from
+more granular objects, so that you could later choose to install just
+a part of a package that suits your needs, and still be able to figure 
+all of that dependancy shit out (and do upgrades and so forth).
+
+* During system startup, more things should be able to happen in
+parallel, based on dependancies. Things like fsck should happen, but
+as soon as fsck is done on a drive, things that are *only* dependant
+on that drive should be able to start up. Of course, there should be a 
+"strict linear" mode for debuggering systems.
+
+* Package manager should understand "symbolic" locations. That is, the 
+whole FSSTD project, as I understand it, is partially because people
+can't figure out where to put things consistently. The package manager 
+ought to allow you to define symbols that map to locations, then
+packages can use those symbols to install files. Similar to windows'
+%WINDOWS% and %SYSTEM% variables.
+
+* Personalities should extend into the word processor / editor,
+too. That is, I have various "personalities" that describe how things
+should look and feel and operate based on the job I'm doing, and for
+whom, and so forth. So when I open a job file for LAN-hopper, my
+editor should recognize that I'm tripp@perspex.com, not
+tripp@jguru.com, and insert *that* ID into any fields like 'author'.
+(Xemacs' SGML mode is what triggered this rant).
+
+* The M-Systems flash units practice a kind of "success through
+graceful failure" in which writes to a particular area, if they fail,
+are automatically remapped to another area on the device. Could a
+filesystem with knowledge of this sort of thing be more transactional?
+That is, if the write fails, the app can rest assured that the
+previous state is still intact? That would, of course, require that
+the FS always try to write to an unused block instead of overwriting
+an existing block (so you don't lose the original info when the write
+fails). That would be cumbersome in the case where you're actually
+overwriting portions of an extant file (ie: bit-scribbling, for
+instance).
+
+* mailer should be able to associate keywords with an email
+address. For instance, Brandon Dudley, my tech support contact for
+@Work (@Home.net) should have keywords @home, @work, and maybe some
+others, and any email with his address in it should automatically get
+those contact words. Then I should do a search, get his address in a
+list at the top of the search that says "found these people", and I
+should be able to click on him and see all mail to / from him,
+forwarded to / from him, etc.
+
+* A good package / system installation manager will let you annotate
+things as "trials" or "sandboxes" or what-not. Let you install them,
+play around with them, and remove them, without affecting the actual
+system transactional state of configuration. Also, will let you make
+config changes that are a part of that sandbox (ie: I install foobar,
+foobar requires me to change my sendmail configs slightly, so I do. I
+uninstall foobar after deciding I don't like it, and my sendmail
+configs get rolled back silently, without becoming a part of the
+permanent transactional history, more or less (though there *would* be 
+some sort of record of the events, for debugging strange problems
+later)).
+
+* Package manager / installer should also have a mechanism whereby you 
+can create "sandboxes" of existing installations so you can play with
+tweaks in private areas. For instance, taking a running, working
+sendmail config and duplicating it on another port, in another portion 
+of the filesystem, so you can test some changes. Ideally, each toolset 
+will have scripts and hints to assist the system in doing this. For
+instance, setting up a "proper" sendmail sandbox would also require
+doing things like making DNS and MX record changes/additions,
+possibly, in order to test repercussions of that sort.
+
+
+2000/01/13
+* I think I've noted this one before, but I want capabilities like
+those 'screen' provides built into the OS (or Operating Environment,
+whatever). Anyway, I'd like it that when a program opened up a pipe to 
+STDOUT or a file or whatever, that I could grab that pipe at any point 
+and redirect it wherever I wanted, without stopping the program. I
+should also maybe be able to make the change as retroactive as
+possible. For instance, I started a big tar / untar copy of some files 
+under X. I wanted to grab the job's output force it to a temp file,
+shutdown X, then pick the output back up in a console window. I should 
+have been able to do that.
+
+Also, this would allow me to, for instance, run a program, and switch
+its output to a different log while I rotate the logs around. This
+might actually be part of a larger "logging" system issue, but anyway, 
+I should be able to move things around this way, dynamically, without
+interrupting the work of the system (or, more particularly, my work).
+
+
+2000/01/13
+* WHY are there so many programs to do the same essential thing? I'd
+rather have lots of little service "objects" that could be strung
+together neatly. I think the OS has some part to play in this. Jini is 
+in the right direction, too. I need to talk to Ken more about these
+ideas.
+
+
+2000/01/13
+* I'm disappointed with the way package managers operate. They all
+treat the system in terms of single packages. I think a package
+manager should be able to help you decide *which* fucking program you
+need. For instance, I was just looking at the description of "xpaint", 
+and it said "install XPaint if you need a paint program for X". Now, I 
+realize this is something that's written up as a part of the
+packager's job. However, I think some "comparative review"
+capabilities would go a long way here. For instance, when I click on
+"XPaint", I get not just what is XPaint, but also what other programs
+fill the same role, and how they compare (both in a strict "checklist" 
+sense, and also in a "popularity" sense). That would help me much
+more, so I could weed out all of the cruft that duplicates
+functionality I already have...
+
+It would also be cool to say, for instance, "I don't have a sound
+card", and have it show me all packages that are useless without a
+sound card (like sound editors and recorders and crap). Or "I have a
+sound card, but don't care about MIDI", and get rid of the MIDI
+players. Also, things like rhsound and sndconfig shouldn't *require*
+files that aren't necessary for your hardware. For instance, sndconfig 
+requires awesfx, and this is bogus.
+
+A lot of this stuff is stuff that should / could be done as a part of
+an information clearinghouse / portal like freshmeat, if they were
+willing to work with the coders on it. But it would have to get a lot
+more advanced than what they have now. Perhaps this is the sort of
+thing that they'd be interested in doing now that they're public and
+have to draw more people through their portal. Or perhaps it's a side
+project I can do through jGuru. gnuGuru :-) gnuru? :-)
+
+
+2000/01/13
+* A related thing the package manager should do is allow you to enter
+a file format and have it tell you the handlers / creators /
+manipulators you have or can get for it. For instance, MP3 players,
+MPEG or QuickTime playback tools, and so forth. Here again, it should
+be able to help you figure out how to get the most bang for your buck, 
+with things like format support comparison, so that you can see which
+program supports the most formats, but maybe it doesn't support the
+one you really need. OR maybe another one doesn't support as many
+formats out of the box, but uses plugins so it's extensible?
+
+All of this is about the package manager / system helping you actually 
+get things done and doing a bit of the work for you, and helping you
+manage the system instead of bloating the system. Package managers
+currently rely on you knowing exactly what you want, and all they
+really do is keep track of collections of files. That's just not
+enough, I think.
+
+
+2000/01/13
+* This is a continuation of a thought above. Too many programmers are
+looking at the world through very limited eyes. They write a program
+that does something, and requires its own little file formats and all
+this stuff. Instead, they could write services, and write clients that 
+use those services. Then someone could add to the services, or someone 
+coule add some other clients, or enhance the existing clients, and so
+on. Maybe KATHMANDU will help this.
+
+
+2000/01/20
+* More on the idea of redirectable streams and such. When you're
+writing the code, you should be able to 'name' streams, then a little
+widget can grab the list of named streams from a currently running
+program and redirect them to wherever you might like. That means, for
+instance, that we can grab logging output, status output, actual data
+output, and so forth, and send them to different destinations.
+
+
+2000/01/28
+* More on package management. A "cute trick" some package maintainers
+are using is to put in .xpms and init files and shit for window
+managers, so that their package shows up on the panel or desktop or
+tray or control panel or whatever. This sucks. This should be
+something to which there's a uniform interface. The package says "I am 
+installing 5 new user-accessible executables, of this class. Would you 
+like icons for them? In what size?", and the window manager / desktop
+environment / whatever the hell it is figures out where to put them
+for the users chosen desktop. Heck, for all users' individual chosen
+operating environments.
+
+Ooh, wouldn't it be cool if they all fucking *shared* a configuration
+environment? Nahh.
+
+
+2000/01/29
+* More on package management. I may have already entered this
+one. When a package installs itself, it ought to be able to ask for
+pointers to various services, so it can configure itself cleanly. For
+instance, ApacheJServ ought to be able to ask the system for all
+available JVMs, and if any of them is "preferred". If there are many,
+and none is preferred, it can ask the user / admin for which one to
+use (and optionally just pick one to use for the meantime, at which
+point it would log an "investigate this arbitrary choice" action to
+the admin's todo list).
+
+At the same time, you should be able to easily see which services
+asked for this information, and automatically update their
+configuration when, for instance, the preference changes. That is, I
+change from JDK 1.1.7 v3 to JDK 1.2 as my "preferred" JDK. As long as
+ApacheJServ is compatible with 1.2, the system should tell me that
+JServ uses the JDK, and would I like to update it to use the new
+"preferred" JDK, or stick with the old...
+
+
+2000/02/06
+* GRIM REAPER: GRIM is a Real Installation Manager, REAPER is a REAl
+Package managER.
+
+I kinda like it as a name for my package / installation management
+system. It makes clear the distinction between managing the *packages* 
+and managing *installation*, which I think are distinct, though
+extensively related and intertwined, activities.
+
+
+2000/02/12
+* Packages should be built as dynamically as possible. I'm trying to
+install GD.pm, which depends on the gd library. So I tracked down and
+installed the gd library RPM. Unfortunately, the RPM is built to
+require libX11 and libXpm, neither of which I have (or want) on this
+system, because we don't X to/from it. However, I can't just "rpm -i
+--nodeps", because the frigging library won't _load_ if it doesn't
+satisfy that dependancy! Doh!.
+
+
+2000/02/15
+* Thread on slashdot about package managers (arising from freshmeat
+editorial on a "universal" package source format) mentions these
+technologies that I should investigate:
+
+	* GNU Stow - http://www.gnu.org/software/stow/stow.html
+	* encap - http://encap.cso.uiuc.edu
+	* BSD Ports - http://www.freebsd.org/handbook/ports.html
+	* PkgMaker - http://bitsko.slc.ut.us/
+	* A comparison of package managers -
+		http://kitenet.net/~joey/package-comp/
+
+Slashdot thread is http://slashdot.org/articles/00/02/15/169200.shtml
+Look for post "autoconf, or what it could have been", by Aaron Sherman 
+(ajs@ajs.com)
+
+Also read a followup comment to that one, longish, that extends to
+another page (ie: the "click for the whole post")
+
+
+2000/02/23
+More package management stuff: the installer should be bright enough to
+figure out things like "aha, we're installing gnuplot, and you have emacs
+or xemacs installed, and there's a gnuplot.el mode for emacs, so I'll install
+it." On the other hand, if you _don't_ have emacs installed, it should say
+"well, then gnuplot.el is unnecessary." However, later, when you _do_ get
+around to installing emacs, it should say "aha! Now you're installing emacs,
+and you already have gnuplot, and there's a gnuplot.el mode for emacs, so
+I'll go grab that and install it!"
+
+Too much, right now, is dependant on the state of your machine at the precise
+moment of installation. The system should record these dependancies in a
+manner that isn't bound to the state of your machine at a given instant.
+That way, when the state of your machine changes, the dependancies can 
+"catch up," installing whatever new things are suggested by the change in
+your system.
+
+
+2000/02/25
+A distributed status board. Specifically, I'm thinking of networking
+status. You have various probes sitting around, and they're reporting
+not just to central, but to each other. That way, you have more of a
+chance of getting the updates posted to places where you can see
+them. So, for instance, Doc can't see chewtoy (on Ter's DSL) because
+of some fuckup between him and Ter. But Ter can see the rest of the
+world, and Doc can see the rest of the world. So Ter's probe is
+telling the probe at the San Mateo office, and the one in my VA
+office, that it can see most of the world. And Doc can connect to his
+nearest probe, which is gathering info from San Mateo and my office,
+and he can then see that Ter can see the world, and he can see the
+world, but he and Ter can't see each other.
+
+
+2000/03/01
+Yes, more bitching about package managers :-) So, a few things I don't
+like about RPM:
+
+	* No "built-in" scripting language other than bash. bash
+	  sucks, which makes it hard to do anything ambitious to
+	  make your package's install/uninstall routines "do the right
+	  thing". I'd like to see Python here.
+
+	* I'd also like to see package management "plugins". That is,
+	  people can write package installer code snippets as plugins,
+	  and make them widely available. When a user grabs your
+	  package, they can grab these plugins with it
+	  (automatically), or use the existing copies on their
+	  systems. This would enable code-sharing among different
+	  packages, for the install / uninstall / verify scripts.
+
+	* Something to let you query installed packages about how to
+	  do the right thing to integrate with them. A specific
+	  example is adding 'index.jsp' as a valid DirectoryIndex to
+	  apache, which requires sed and an intimate knowledge of how
+	  the apache configs are structured. Another example is adding
+	  the wrapper.classpath entries to jserv.properties for the
+	  portalserver. This required writing some funky (as in
+	  smelly) inline Perl code in my RPM spec file. I'd rather be
+	  able to call a generic tool for adding config values to
+	  "well-structured" configs or something.
+
+
+2000/03/01
+On storing configs in XML. It's a good idea inasmuch as it allows easy
+programmatic manipulation as described above. It's a bad idea inasmuch
+as XML-based configs would be a bitch to maintain. XML is plain
+ugly. A good config language _can_ be beautiful, expressing with great
+tersity the behaviour of a system. That's cool.
+
+Nevertheless, doing something like XML, I think is going to quickly
+become a necessary evil in order to wrangle the state of configs. So
+perhaps a hybrid approach, in which people _can_ maintain their
+configs in the "native" language of the program, and the programs
+apply "reverse stylesheets" to generate the canonical XML
+configs. Then, when a third-party program wants to edit the configs
+programmatically, it does so, through the published "API" for that
+program (or class of programs). Finally, the configuration "engine"
+will keep the two version of the config in sync, using the forward and
+reverse stylesheets.
+
+On the other hand, we could do away with all of this shit entirely :-)
+Who knows? Maybe I'm just thinking of how to solve the problems that
+wouldn't exist if we approached things from, say, the Jini
+perspective, as Ken suggests. Things to think about.
+
+
+2000/03/10
+Name for the doc/info/knowledge management framework:
+
+     wtfk - working toolkit for knowledge (what the fuck?)
+
+:-)
+
+
+2000/03/11
+http://www.equi4.com/metakit/ - reading through the docs on this, and
+they mention read-only media. Duh, I forgot about that. It would be
+cool to be able to store "base" semnet collections on read-only media,
+then have sort of transactional log "mods" to the base. That way, you
+can commit a given ibase to CD-ROM or whatever, but then continue to
+grow it, change it, etc., on read-write media.
+
+
+2000/03/22
+Would be nice to have some easy, builtin way of submitting bugs for
+any random package. For instance, I think I found a bug in bash the
+other day (don't remember what it was). Would be nice to be able to
+just say "bugreport bash", and it would query the package system to
+figure out what it should do with bugs for bash, search the path to
+determine which version of bash I was invoking, what package owned it,
+and so forth. Of course, similar hooks for GUI apps, too :-) And it
+should be a systemwide facility that developers can count on, so they
+can put automated bug reporting into their apps as well.
+
+
+2000/03/28
+On the "issue tracking" system: need several different dimensions for
+rating the issue. Things like priority, severity (ie: how much impact
+not fixing this will have on the system), complexity (ie: how much
+bloody work it's going to be). One should be able to, for instance,
+select all "easy" jobs when one is having a brain-fried day and just
+wants to catch up on trivial bugs.
+
+
+2000/03/29
+In the shell, a program should be able to register completion
+hints. For example, perforce, when installing, ought to register that
+the command 'p4' has a hints handler. Then, when I type 'p4
+<tab><tab>', it ought to show me the available commands. 'p4 h<tab>'
+would complete to 'p4 help', 'p4 h<tab><tab><tab> would complete to
+'p4 help' along with a list 'simple commands <commands>' etc. Then, of
+course, the handlers could themselves hook into various "system"
+handlers like the 'filename' handler, which would offer the user a
+standard filename searcher, the 'executable' handler, which would do
+the standard path-based completion for executable names, 'hostname'
+handler, which would offer hostnames based on /etc/hosts or some
+similar mechanism.
+
+
+2000/03/31
+More on command completion: In order to "meaningfully" parse the
+partial commandline, and cut down on duplicate code, it seems like
+this is also a good place to introduce a more meaningful "options
+parsing" mechanism. Something driven by a grammar of some sort, so
+that manpages, help message, options parsing code, and
+shell-completion code can all be generated from the same basic
+config.
+
+
+2000/04/06
+Looking at Lynx's man page, and noting all of the commandline switches
+to enable / disable various options. I'm thinking that this is the
+sort of thing where a very modular "plugin" architecture would work
+really well. Instead of enabling / disabling something via a
+commandline switch, you just build a profile file that doesn't load
+the given modules. That keeps your codesize down, as well. So, instead
+of "disabling" local execution of files, you just don't load the
+"localexec" module.
+
+
+2000/04/06
+I'm thinking of a concept where a language uses "tagging" in its try
+blocks (for exceptions). The idea is that you "tag" or label a piece
+of code within a larger try block. When the exception throws, you get
+the type of exception, but you also get the most recent tag. That way,
+instead of wrapping a block of code in a bunch of little try blocks,
+you wrap the whole "thought" in one large try block, labelling each
+"step" of the thought. When you catch the exception, you switch based
+on both the type of exception and _where_ in the thought it occured.
+
+Of course, a bunch of tags might get ugly. Anyway, the idea is to do
+something a little different that allows you to keep the ideas
+together, but still handle the exceptions specifically.
+
+
+2000/04/08
+Some sort of "shared bookmarks" facility in a whiteboard type
+application. Basically, I'd like to be able to hit a "Share This!"
+button, add some description / categorization / etc., choose a set of
+"groups" to share the link with, and have it whisked off. Some folks
+would get it via email, others by looking at the whiteboard. The
+whiteboard would give both a categorized view of it and a "most
+recently added", like the jGuru PeerScope stuff.
+
+
+2000/04/12
+"write" and "wall" suck as mechanisms for getting in touch with
+people. Given that most people run windowing systems now, and even if
+they didn't, those fuckers always drop stuff right across
+everything. There ought to be application hooks, so when a message
+like that comes across, the application can be given a chance to
+handle it, for instance, by popping up an overlay text window or
+something. A windowing system should be able to display it in
+"messages" widget on the taskbar thingie.
+
+
+2000/04/12
+There needs to be a way to send out package "diffs", so you don't have
+to download the whole fscking RPM every time for minor changes.
+
+
+2000/04/18
+When writing software that requires a config file, include a
+standalone "config utility" (basically, a parsing library) that people
+can use when scripting against the program. I find this most annoying
+in building RPMs for Apache, for example, since I have to write
+ugly-ass inline Perl to manage the httpd.conf file.
+
+
+2000/04/23
+When a trouble-ticketing system allows an individual operator to send
+a note, it should write the reply-to and from: fields in such a way
+that any replies will get cc'ed to both the general "support" alias
+(ie: the ticketing system) _and_ the individual that sent the
+message. This should all be done through a rewriting of the address
+itself, which implies tight coupling with an MTA at some stage. Thus,
+support-123414-tlilley@support.jguru.com, for instance, would indicate
+ticket #123414, a message sent by tlilley, and message(s) sent to that
+address would get attached to the ticket, cc'ed to a "support" alias
+in general, and sent directly to tlilley in some way.
+
+This is so that, among other things, little niceties like "thanks"
+don't get lost to a general support alias.
+
+
+2000/04/24
+Issue tracker: make sure to allow people to explicitly move / place
+items in their view(s) of open issues. That is, items have a "global"
+order, and a "view" order. Views can be shared among users, or
+individual. Views can be aggregates of other views. Etc., etc. This
+"view" notion is part of my idea for being able to import "jGuru"
+issues into the same view as my household issues, so I can prioritize
+things relative to one another across the entire spectrum of what I
+have to do.
+
+Actually, there's some notion of "priority" and "severity", and then a
+separate notion of "order", which may be _based_ on priority and
+severity (and source), but doesn't _have_ to be. And it can be
+modified within an item/view, too. That is, jGuru assigns something
+P1, severity "blocker", and I, in general, have jGuru items mapped in
+at their native order implied by priority+severity. However, in this
+case, I manually boost it to an explicit order, or I manually boost it
+to a new relative order (ie: native order + 5, or somesuch). Ideas,
+anyway. Grist for the mill.
+
+
+2000/04/27
+Random stuff to make my life easier while I'm still stuck building
+RPMs -- some sort of "make clean" for RPMs that will look to see if
+the RPM is installed, and, if not, will clean up all of the
+directories and files that are used in the building of the RPM. For
+instance, building and installing Resin puts a bunch of crap all over
+the place, not all of which actually goes into the RPM. So when I
+build the RPM, I want to clean out the leftover crap I don't need,
+before I test by installing the RPM.
+
+On the other hand, I could use the whole "chroot" thing when I'm
+building. Hmm. Worth thinking about...
+
+
+2000/05/05
+Looking at /home/ftp, and the libs copied into there because ftp runs
+chroot'ed. I bet those libraries don't get updated when the system
+libraries do. They should. There should be a way of putting in dynamic
+actions like "copy these files when these files change". Of course,
+you'll want to be able to put constraints on that, like "when these
+files change due to a system upgrade" versus "when these files change
+due to some idiot fucking around" :)
+
+
+2000/06/09
+Issue tracker: when you mark one bug as dependant on another bug,
+there should be a checkbox next to it saying "resolve bug as 'LATER'
+until its depandancy is satisfied?". Then, when the dependancy is
+satisfied, it should change the state of the dependant bug back to
+OPEN or REMIND or whatever.
+
+
+2000/06/19
+Package Manager: RPM sucks terribly at dealing with the idea of a
+"host" versus "target" machine when it comes to installing
+things. There's a lot of infrastructure required to execute whatever
+pre/post/etc. scripts are in the RPM. That infrastructure might not
+actually be *necessary* on the target machine, but there's no good way
+to say "run this stuff from the host, but use the target as the place
+you're actually working".
+
+Part of this, I think, has to do with the lack of much abstraction
+within RPM (and, I guess, within Linux + Unix in general). Developers
+adopt a "have to do it myself" mindset, which means a lot of scripting
+that could probably be offloaded into tools which understood the
+"host" versus "target" distinction, and could abstract that
+away... That way, as a packager, you could just use the abstractions,
+and trust that the package manager would properly deal with "host"
+versus "target" issues at install time. If you were installing *on*
+the target *from* the target, it would do the right thing, and if you
+were installing on the target from a *host* (for instance, building a
+filesystem on a loopback device), it would do the right thing.
+
+
+2000/06/19
+Embedded work: One problem with the whole mounting loopback
+filesystems thingie is that you still need to do some things as root
+on your development host since it doesn't know the difference between
+the device under development and a normal part of your toolkit. What
+would be nice is some user-space tools that would let you build
+arbitrary filesystems without becoming root and mounting things to the
+loopback device.
+
+
+2000/06/19
+Embedded work / Package Manager: YOU DON'T FUCKING NEED FUCKING
+INCLUDE FILES ON A FUCKING EMBEDDED SYSTEM! Sigh. I'm sorry. I totally
+*understand* the Unix "if it bleeds, we can compile it" philosophy,
+but it's not always the RIGHT PHILOSOPHY TO USE!!
+
+The point of this rant is that the packaging system should allow you
+to designate certain pieces of the package as belonging to a
+"profile", and that the profiles will help you build trim systems (ie:
+unless you have the "I develop shit" profile turned on on your
+machine, you won't get header files, or development libraries, or what
+have you).
+
+One specific note: as for defining some "common" profiles, keep in
+mind the distinction between folks who compile stuff off the shelf,
+folks who actively develop, and folks who actually *use* the debugging
+versions of things when they're developing :)
+
+
+2000/06/26
+Physical Token Security: okay, the smartcard is a cool idea for
+physical token-based security. What would be really cool is if a
+machine sits there, waiting for you to enter your token and
+authenticate it (with a simple passphrase?). When you correctly
+authenticate, you get dropped into your desktop, with everything
+"where you left it", VNC-style.
+
+What's even cooler, though, is that when you get up and grab your
+token, it cleans up everything on that machine (including storing
+uncomitted work so you can resume it), then puts the machine into
+"guest" mode, meaning someone can come up and do the basic things
+(email, browsing, etc.) without needing to authenticate via the
+token. That is, they can do totally guest things, or, if they want to
+use services hosted on the machine, they can authenticate in the
+old-fashioned way.
+
+
+2000/07/11
+If you change things in nameservice, dhcpd needs to be restarted,
+probably, so it catches those changes.
+
+
+2000/07/13
+Chatting with Greg Bossert (Jim's roommate) about managing directory
+structures. He's written an XML DTD to describe directory structures,
+and some tools to play with those. He made an interesting comment
+about basically creating directory "classes", then "instances", with
+annotations about how the instance differs from the class. For
+instance, projects might all originate from the "project" directory
+class, but could well diverge from that over time. Food for thought.
+
+
+2000/07/16
+qmail's INSTALL.mbox says this:
+
+   * Move each /var/spool/mail/user to ~user/Mailbox. For safety, do
+     this in single-user mode.
+
+This is stupid. The OS ought to provide a straightforward, reliable
+way of locking a file, groups of files, etc., with a reason
+associated, so that a user running, e.g., pine, would be informed that
+the mailbox was being dinked with by the sysadmin, and it will be
+available in n minutes or what have you.
+
+
+2000/07/17
+Thinking about tied variables, updated by the system itself. For
+instance, your bash prompt is partially computed at login time, and
+partially computed by bash itself, with, for instance, the current
+path. The way you do things like make it [user@hostname /path] is to
+do something like prompt=\[`id -nu`@`hostname` %path\] (well, more
+csh-ish than bash-ish, because I'm looking at a csh). Anyway, %path
+might be resolved by the shell, but the id and hostname commands are
+both interpreted once, by the shell, when you *set* the prompt
+initially. But what if your hostname or username changes in
+mid-stride?
+
+I'd like to see something like tied "system variables", where bash can
+simply interpolate the variable's value, and know that the system will
+always keep it up to date, propagating changes into it if something
+systemwide changes...
+
+Of ocurse, it would also generate some sort of "event" for those
+changes, so your program could decide it wanted to take some specific
+action when, say, the hostname changed, or an interface was added, or
+what have you.
+
+
+2000/08/05
+Here's a whacky one: ppgw - Perl / Python GateWay. A shim package that
+allows you to use (most) Perl modules from within Python, with a
+Python-esque interface on them, inasmuch as it's possible. There are a
+shitload of good utility routines (Date::Manip, for instance) for Perl
+that don't exist for Python yet, or aren't as complete or mature. Most
+Python platforms (all?) also have a Perl available.
+
+Cool.
+
+
+2000/08/07
+Article / Op-ed piece on package management, distribution, etc.:
+http://www.osopinion.com/Opinions/AmyLear/AmyLear1.html
+
+Follow-ups:
+http://www.osopinion.com/cgi-bin/w3t4/showthreaded.pl?Cat=&Board=talkbackforum&Number=7439&page=0&view=collapsed&sb=5
+
+Slashdot discussion:
+http://slashdot.org/article.pl?sid=00/08/07/0225240&mode=thread
+
+
+2000/08/20
+Nautilus Eazel preview caused a good thread on Slashdot, including my
+first ever Score:5 post! :) Here's the whole thread, and my post:
+
+	http://slashdot.org/article.pl?sid=00/08/17/005218&mode=thread
+	http://slashdot.org/comments.pl?sid=00/08/17/005218&threshold=0&commentsort=0&mode=thread&cid=120
+
+
+2000/08/20
+Thoughts that come to me when catching up on the FHS discussion about
+where to put content. Thoughts merged with some of Coopers ideas about
+getting rid of the "filesystem" as a user worry.
+
+Specifically, I'm thinking of something where even the sysadmin
+wouldn't need to deal with the "filesystem", and the organization,
+etc., that something like FHS assumes is necessary. What if the OS
+offered allocation policies for storage space? That is, your
+application (or installer, or whatever) requests storage space from
+the OS in terms of size, latency, bandwidth, robustness, etc., and
+then the OS "just provides it", whether it comes from locally-attached
+storage, SAN storage, offsite (via HTTP or what have you), and so
+forth?
+
+Of course, you'd have tools to be able to spelunk where things went,
+and to override the OS's decisions. But, in general, what if we didn't
+have to spend so much time *managing* the fucking details?
+
+
+2000/08/20
+For my "better" p4 wrapper, etc.: the tool that lets you work on sets
+of files determined by rules like "whether or not they're in the
+depot" should have a way of specifically ignoring / excluding sets of
+files by characteristics like name. The specific example I'm thinking
+of is this p4 user pattern:
+
+	find -not -type -d | xargs p4 files > /dev/null
+
+which shows you all files not "in" the depot. What I'd like to see is
+that:
+
+	- files like .class, .pyc, *~ are ignored by this
+	- files that are currently opened for "add" are not listed
+
+that way, I can *truly* see what files I need to put into the depot,
+etc.
+
+This same thing applies to, e.g., diff operations against the
+filespace. I don't want to diff files that I don't "care" about.
+
+
+2000/08/22
+A disk-based regex engine. That is, instead of slurping files into
+memory when you want to run regexes on them, the regex engine works
+directly to disk, using input and output files, as well as temp files
+to store partial matches and what-not. This lets regex input be
+arbitrarily large, while using near-constant memory.
+
+You could also tune it, when you know a priori the size of your
+matches, so that it would keep matches in memory, while keeping the
+input and output on disk, still. So, if you're doing millions of
+string match / replace operations, you won't be doing all of that disk
+scrubbing to the temp files.
+
+
+2000/08/24
+Python docstrings, javadoc, Perl's POD, all nifty. But none offer
+"grouping" or any other sort of meta-management /within/ a
+class/module/whatever. For instance, I have a bunch of functions in
+selfish.core._core that manipulate internal data structures. Then I
+have the core API for manipulating attributes, then I have the various
+wrapper method aliases for that core API. I should be able to group
+these things together, then write a docstring that describes the
+group.
+
+
+2000/09/03
+Source control system: version-controlled metadata. Specific example is
+Perforce's branch specifications. I'm done with the branch. What I *want*
+to do is say "p4 branch -d -r foobar" (-d to delete, -r to recursively
+delete branch 'contents') and have it clean up the branch, but still keep
+the history of the existence of the branch in the system. A later tool
+ought to be able to spelunk the metadata and discover that someone had
+created a branch, did a bunch of work in it, then closed it. Right now,
+once I delete the branch, the record of its existence is gone,
+effectively. But if I keep it around, it clutters up my list of branches,
+which is silly. I don't need it any more.
+
+
+2000/09/11
+MDMA/DB: People can be christened "moderators" for certain spans in the
+graph. Being a moderator means both that their votes are more heavily
+weighted, and also that they can explicitly override / veto / etc. So, for
+instance, someone with a lot of interest in Sixteen Horsepower could be the
+moderator for a span including Sixteen Horsepower itself, as well as the
+members of the band, and so forth.
+
+
+2000/09/17
+The issue tracker would be much more useful to me if it were relatively
+easy to create new projects / categories / etc.  on the fly. I'd like to be
+able to start entering an issue, then decide that I needed to create a new
+project, category, etc.
+
+
+2000/10/03
+Source control system: Need to think seriously about use-cases for
+branches, and build in some optimizations. For instance, right now, I'm
+using branches in John's style, building a dev branch whenever I want to
+play on something "dangerous". When I'm finished with that branch, I either
+discard it or fold it into the mainline. Either way, I want to sort of
+"freeze" it, releasing resources, but still be able to "unfreeze" it later,
+should I decide to revisit that branch. Furthermore, I need to be able to
+see that branch's history as a part of the history of the mainline, when
+I'm doing a review or what have you. This is related to the versioned
+metadata above, but it's more than just that.
+
+I'm also thinking about the conversation I was having with Tom at
+Net-Hopper about how they're using branches. He brought up the question of
+what you do when you have multiple developers sharing a dev branch (which
+does happen, when they're working as a team on a radical, dangerous
+change). No single developer can check in something to the dev branch that
+might compromise the work of the other developers (ie: cause the nightly
+build in that dev branch to fail, or whatever). That suggests that perhaps
+some dev branches should, themselves, be treated like mainlines, with
+individual developers branching off of that and then reintegrating into the
+dev mainline. Once the specific dev mainline is "stable", it can be
+reintegrated into the full product mainline.
+
+
+2000/10/05
+Media Server: I like this idea from Obsequieum -- "SortName". The idea is
+that you can specify the display name one way, but the sorting name another
+(ie: "Beatles, The" is the sort name, but it's displayed as "The Beatles".)
+
+
+2000/10/29
+Issue tracking: it needs to be really easy to open an issue. CLI tools,
+small GUI widgets (ie: applets), web form, and so forth. Allow folks to
+work the way they work. All of this, of course, stems from a good API and
+on-the-wire protocol (or CORBA, or whatever) so that people can write
+clients easily.
+
+
+2000/10/31
+ROML: How can we specify "interesting" combinations of options, and
+constraints on those combinations? For instance, in my "report" app for the
+Core Comm checkwriter, I act differently based on how --master, --reseller,
+--bank, and --house interact. I'm expressing that "programmatically" right
+now (ie: with actual code that figures out what behaviour to adopt). But is
+there a "cleaner" way to specify combinations like this?
+
+
+2000/11/01
+Coupon Tool: record coupons / specials / etc., and annotate them with
+expiry dates. System only shows "active" specials, and also gives you a
+heads up when things are "soon to expire", so you can be sure to use them
+before they do. Sync with Pilot, of course, so you can respond to a "expiry
+warning" by saying, e.g., "remind me of this in my Pilot on Thursday, since
+I'll be downtown".
+
+
+2000/11/07
+Event Tracker: I'd like to be able to enter an "event" in my Pilot which
+says something like this: "If I don't receive my Voter Registration Card by
+January 1st, remind me to call the Registrar's office." Then, if I receive
+my card, I check it off my list of "things to look for in the mail". If I
+don't receive it, I'll get a reminder to call the registrar's office.
+
+
+2000/11/07
+SCM: branches, etc., have metadata that's itself version
+controlled. Moreover, things like "branches" have a "state" field, and
+associated rules about states. For instance, branches might have the
+following states defined by the SCM admin:
+
+	nascent
+	active
+	frozen
+	thawed
+	hidden
+
+with associated rules like "can't submit", "can't integrate", etc. Then
+folks could define their own workflow processes to support branch models
+vs. promotion models, etc.
+
+
+2000/11/10
+Media Server: randomizer should use plugins. Basically, when the queue's
+nearing emptiness, the randomizer will ask any registered, active plugins
+to choose songs (or to process / veto / etc. the song selection).
+
+
+2000/11/10
+Version Controlled Systems: when I change settings, automatically restart
+services (as determined by a dependancy graph of settings to services,
+etc.). If I decide to rollback changes, automatically restart services
+again when I've rolled back. Or, better yet, just have services dynamically
+respond to configuration changes (ie: an "active" registry).
+
+
+2000/11/25
+Reading through this file, and thinking about what it will take to import
+all of this into an "idea manager" or whatever. One thing I seem to do from
+time to time is to refer to "the idea above" or "the paragraph above" when
+I'm continuing a thought at some later instant. Therefore, there needs to
+be an easy way of connecting items temporaly and spatially, so that such
+references are meaningful when rereading it. Almost a "normative
+references" sort of facility. The system should automatically grab such
+references and either render them inline with the "current" node, or at
+least place links to them nearby.
+
+At the same time, the node entry tool probably ought to do something like
+show you the most recent node(s) you added or modified, so you can easily
+refer to recent entries like that. Or if you're viewing a node, and it
+inspires you to enter something, obviously there should be an easy "click
+here to refer to the node that inspired you" sort of widget.
+
+
+2000/11/25
+http://internetpulse.keynote.com/
+
+
+2000/11/27
+http://www.webql.com/
+
+I have no idea how this is implemented. However, it inspires me in the
+general direction of using XQL or whatever, and a tool that will grab a
+website and build a strict data model of it. Then you build a mapping from
+that model to what you're actually interested in, and you can then use the
+tools / libraries to retrieve that stuff without writing a bunch of HTML
+parsing.
+
+
+2000/12/01
+http://my.infotriever.com/DavidAkin - example of "one-click" contact
+management, only it's not "one-click" until you download the plugin :)
+Would be cooler if I could just put a .vcf (vcard) file up on my site, and
+have the browser properly handle registering it with the user's contact
+management tool(s).
+
+
+2000/12/14
+SCM: While transactions should be atomic, one really should be able to
+modify an already-committed transaction if it can be done without messing
+up "future" transactions. I frequently "fuck up" and commit one file, then
+realize another one should have gone with it for true consistency.
+
+Of course, this might be moot if the SCM system had a more fluid notion of
+branches, such that one could commit ad nauseum, but "mark" certain
+committments, or collections of file states, as belonging to a certain
+transaction or what have you. I guess maybe I'm thinking of something along
+the lines of micro-commits that aren't actually visible to other users
+until you macro-commit. Think Bonsai tree, perhaps?
+
+
+2000/12/15
+Mail Server / Datastore: The basic idea is "sig compression", which is to
+say that the mail datastore should be able to find things that show up over
+and over within the entire store (like, for instance, someone's .sig or
+VCard or what have you) and ultra compress by storing a reference to that
+instead of the thing itself. However, one wonders whether or not this is
+overkill. But it does lead to the idea of doing something like tuning the
+GZip or what have you based on contexts within the datastore, not just
+within an individual item. That is to say that, rather than gzipping a mail
+message by itself, you'd zip it with a compression method that took
+advantage of repeating strings across an entire subspace of the
+datastore. That way something like a .sig that repeated in 1,000 messages
+and was 450 bytes long would get compressed down to say one or two bytes in
+each of the 1000 messages instead of 280 bytes in each.
+
+But, again, it may be way too much work for the "return", given that disk
+space is cheap and it would probably take too much processing.
+
+
+2000/12/16
+I finally figured it out!! I've been trying to get my head around an XML
+"style" question -- when to use "attributes" and when to use contained
+elements. In reading an RFC written in XML (in fact, the RFC about writing
+RFCs in XML :) ), I realized what I've been missing!
+
+Attributes should describe data ABOUT the element, elements and
+sub-elements should contain data that IS the element!! The examples that
+bugged in particular, and finally helped me see the light, were these:
+
+	<doc.author surname="Rose" fullname="Marshall T. Rose" initials="M.T.">
+	<doc.date year="1999" month="June"></doc.date>
+
+In both cases, attributes are used to store the DATA that IS the object
+itself (or, in the case of "doc.author", is the beginning of the object and
+an identifier of sorts). However, I think they should be more like this:
+
+	<doc.author>
+		<name>
+			<surname>Rose</surname>
+			<first_name>Marshall</first_name>
+			<middle_initial>T</middle_initial>
+			<fullname>Marshall T. Rose</fullname>
+			<initials>M.T.</initials>
+		</name>
+	</doc.author>
+
+	<doc.date>
+		<year>1999</year>	
+		<month language="US">June</month>
+	</doc.date>
+
+Now, note in particular the "doc.date" tag, which shows what I mean by META
+DATA. The CONTENT of the month tag is "June", but in order to make that
+meaningful, you need to specify what language you're using. Now,
+truthfully, one could probably look up monthnames in all languages out of a
+single table to map them to numbers, or local names, or whatever, but the
+point is that attributes should describe the data, how it's represented,
+etc., but should not BE the data.
+
+FINALLY!! That one's been bugging me :)
+
+
+2000/12/16
+To keep in mind when writing up my "demands" for the IOD job:
+
+	http://www.jwz.org/gruntle/nscpdorm.html
+
+(yes, I intend to include this URL in the doc)
+
+
+2000/12/16
+ROML: Look at App::Config from CPAN for ideas.
+
+
+2000/12/17
+I'm looking at the Adobe Acrobat installer script (in this dir as
+'acrobat-install'), which is written entirely in (presumably) portable
+sh. What I'm noticing is ugly shit that they rewrite in every script, like
+echoawk and yesno and such. I wonder what it would take to make such things
+available systemwide, as part of a "standard" set of library tools? But
+then would people use them, or would they just keep rolling their own out
+of ignorance? And, of course, we have the perennial shared library problems
+(version control, compatibility, etc.). Someone on advogato, I think, made
+a statement along the lines of "why are we even bothering with shared
+libraries?" On one level, there's certainly benefit in knowing that an app,
+once compiled, ought to "work forever", but that's not very realistic under
+any current circumstances, even if you link it statically, no?
+
+But I digress...
+
+
+2000/12/22
+I'm writing some HTML template stuff with Erich and using something like
+{$type_display_name} and {$type_display_name_plural}. Wouldn't it be
+interesting if the programming language supported some kind of "multi-valued"
+variables where I could say {$type_name:display:plural} if I wanted to specify
+that, but could say just $type_name if I didn't. I suppose you could look at
+Perl this way, and say that $type_name (scalar) is the "default" and %type_name
+contains the other permutations. I'll have to think about this more...
+
+It could also be relevant in "style-sheets" of some sort. For instance, if I
+use {$type_name} in the context of, say, an <h1> tag, it would use the "display
+name" property, but if I use it in, say, an <input> tag, it would use the
+"mnemonic" property (or even the ID!!)
+
+
+2000/12/23
+SCM: The SCM command-line tool should allow one to register post-processing
+"plugins" that run client-side to munge the output. The plugins would be
+handed output in a form amenable to parsing (XML, language-specific
+structs, whatever), and would be allowed to act on the output. This would
+allow, for instance, a "p4 opened ..." post-processor that stripped the
+depot path prefix, moved the "add|edit|delete|..." spec to the front of the
+line, and colorized it (imagine the sample with colors :) ):
+
+	edit:	/data/real/schema.sut
+	delete:	/src/Report/massive_account_basis.pm
+	edit:	/src/Report/massive_account_basis_master.pm
+
+
+2001/01/02
+Design Philosophies: During training with Erich (2000/12/18 - 22), I
+realized that the trouble I've been having with the entire "entity state"
+mechanism in the Core-Comm checkwriter has to do with the distinction
+between STATE and ACTION, a distinction I haven't been making. I've been
+muddling together STATE and ACTION in one concept called "entity state",
+and it doesn't work! STATE should reflect the "position" of an object,
+ACTION should reflect something done to an object to either put it in a
+state or simply maintain its state.
+
+So, for instance, "created", "printed", "exported" are all ACTIONs (having
+occured in the past). "active", "inactive", and "archived" are STATEs
+(though "archived" could be both a STATE and an ACTION, where the ACTION
+precedes the STATE).
+
+Anyway, that distinction has messed with me on several projects, so I'm
+recording it here for eventual inclusion in a "design philosophies"
+grimoire to which I can refer :)
+
+
+2001/01/04
+HandyShopper: When adding new items, it would be helpful if each store
+could belong to many "categories". Then, when I selected a category for the
+new item, it would automatically check each store that belonged to that
+"category". I could uncheck any store that I knew -didn't- carry that item,
+but it would start out with a complete list of stores.
+
+Also, aisles should be text, and each store should have its own list of
+aisles, and a map from the item to an aisle in each store.
+
+When I'm going out, I'd like to be able to list the "stores I need to
+visit". In other words, list each store at which I have unfulfilled
+items. I'd also like to be able to say "I'm going to these stores, and
+these stores only," and have it list the items I need at each store (in
+order of my planned visits :) ).
+
+
+2001/01/08
+FHS: Wow. A lot of bright people are spending a lot of time solving
+problems that really shouldn't need to be solved. Filesystems SUCK ASS. A
+long time ago, the "UNIX way" (treating everything as a file) was a good
+idea. There are still things to be learned from that. However, I don't
+think it's necessary. I think there are some good arguments for either not
+treating everything as a file, or at least folding in some higher-level
+semantics on top of files. I have a lot of ideas about this, obviously (if
+you look at early designs for my everything and other related technologies,
+you'll know what I mean), but I'm not up to listing them right now :)
+
+The bottom line, though, is that making edicts about what strings mean
+(/srv/whatever, /var/whatever) is the wrong way to address the fundamental
+problem. But that's not surprising.
+
+
+2001/01/09
+Bookmarks: here's a possible hack for Mozilla or what have you. When you
+click the "bookmark" hot-key, the system looks for a registered "bookmark
+handler" (or handlers) and allows it to take over the bookmarking
+process. This allows you to add on fancy plugin bookmark systems. Same for
+searching / presenting / managing bookmarks.
+
+
+2001/01/09
+Grumbles: SQmaiL - http://sqmail.sourceforge.net/ is a waste of this poor
+guy's time. I don't mean that he shouldn't do it. I don't mean that
+stuffing messages into an SQL backend is the wrong thing to do. I don't
+mean that writing an MUA you like isn't a worthwhile undertaking. I mean
+that it's too bad that he has to rewrite the entire MUA just to solve the
+"large mailboxes" problem. Wouldn't it be nicer if he could just rewrite
+the backend engine and plug it into all of the MUAs he used?
+
+IMAP gives us this abstraction, in one sense, because it offloads the
+actual message store and manipulation thereof to the server side. However,
+there's still the issue of the client side caching of large stores, and so
+forth.
+
+It would be nicer if folks worked on interfaces, split out presentation,
+manipulation, storage, and so forth. That way, others could come along and
+optimize along different axes as important to them.
+
+
+2001/01/09
+HandyShopper: Initial idea is for an online Radio Shack catalog (Digi-Key,
+etc.), which would integrate with, say, your schematic capture and PCB
+layout, and other similar tools. You need to dash out to RatShack, you sync
+your Palm and the items show up in HandyShopper with RatShack catalog
+numbers, etc.
+
+This, of course, can be extended to all sorts of stuff. As long as there's
+a common format for catalog data, and distributors can consistently map
+from manufacturer ID to their ID, you can tell HandyShopper (or its
+PC-based cousin) what stores are in your area, and it can give you a
+shopping plan.
+
+
+2001/01/11
+General: Of course, I'm with Alan Cooper in my belief that version control
+should be built in to all apps, and that there should be no such thing as
+"saving", just that of "checkpointing". Even so, this applies: when an app
+tells you that something about the document has "changed", it ought to be
+able to present a meaningful, concise summary of what's changed, and how
+that actually -affects- things. For instance, it can tell you that some
+content has changed, or it can tell you that some formatting has changed,
+or that some document structure has changed (in other words, no content
+atoms changed, but content atoms changed their relationship to one another
+and their structural "meaning").
+
+
+2001/01/11
+General: when an app is starting up or shutting down, often there's stuff
+on the screen that looks manipulable (and, in fact, probably is), but if
+you manipulate it, you will seriously hose yourself. When this is the case,
+these things should borrow a page from good ol' Win95 and gray themselves
+out -entirely-. That is, the app should take on a "disabled" flavour,
+possibly throwing up a dialog or other indicator that it's thinking about
+how to shut down.
+
+Of course, another approach to all of this is the basic precept that
+nothing ever "starts" or "stops", but that things are always running, and
+either hibernating or not. There's always a "reset everything" sort of
+button, so you can deal with the occasional wedged app, but for the most
+part, things should just always be resident.
+
+
+2001/01/11
+Email: here's a whacky one. How many times have you thrown out a message,
+then went "oh, nevermind, I found it!". Or someone asks for something, and
+a dozen people come up with responses. However, someone (usually me)
+always ends up reading the message hours later and responding before
+reading the rest of the responses.
+
+So... wouldn't it be cool if you could send a followup "nevermind" or
+addendum message that a mail client would recognize as such, and would
+visibly note as a followup. What I'm envisioning is you, reading the
+original message in your mail client, and seeing a little flag in the
+corner indicating "hey, idiot! There's more on this, so don't do a
+knee-jerk and flood the list!"
+
+That would be cool.
+
+
+2001/01/14
+random transcriptions from a piece of paper on my desk:
+
+	INVESTIGATIONS:
+		* Xiphophorous - xiph.org
+		* PAM - Pluggable Authentication Modules
+		* TROVE - software categorization (sourceforge)
+		* Horus / Ensemble - ??
+		* Web CD Writer
+		* EPM: ESP's Package Generator
+		* LVM HOWTO - snapshots (Linux Volume Mangement?)
+		* Webmin - ??
+		* IBM Graph Toolkit (devworks, presumably?)
+
+
+2001/01/16
+Slashdot notes: read "Distributed Systems" by Sape Mullender
+
+BTW: when releasing TRUCK, we should respond in our introductory document
+to many of the boneheaded, kneejerk assertions put forth by
+/. scriptkiddies in this thread:
+
+	http://slashdot.org/articles/01/01/16/1855253.shtml
+
+Also saw mention of "Liquid File System", with this link:
+
+	http://www.windseye.com/Dru/lfs/
+
+Dru is a BeOS guy, but not a programmer. Has some good ideas about
+information organization, access, etc.
+
+
+2001/02/28
+Issue tracker: allow people to add "aliases" for themselves, so that they
+can use alternate email addresses for different projects, etc., but still
+be "themselves" when it comes to logging in, etc. There are a few ways to
+approach this, including the brute force "list all of your aliases". I
+think some combination that includes heuristics (like
+"tripp+foo@perspex.com" would be flagged and rewritten to
+"tripp@perspex.com" for identification, but mail would still be sent to
+"tripp+foo@perspex.com"), but also brute force.
+
+For brute force, in particular, I think there should be both the
+"explicitly list aliases", and the ability to dynamically add an alias when
+it's entered and it fails the heuristics and alias lookups. So I enter a
+bug and assign it to "tripp-foobar@perspex.com", and it can't figure out
+that that's tripp@perspex.com (because there's no rule / heuristic for
+that), so it prompts me to pick the "real" user, or to create a new "real"
+user.
+
+
+2001/03/07-08
+More Desk Transcriptions:
+
+	EXPLORE:
+		* Doxygen - doc tool for C/C++/IDL
+		* Coldsync - alternate Palm library
+		* Damian Conway's Website, "Cookbook" docs...
+		* Add line number anchors to enscript's HTML (for use
+		  in doc generation so you can link directly to lines)
+
+	MISC:
+		* .alp: Adiamante Linux Package (random naming idea)
+		* May '93 Dobb's flash memory article
+		* rover, reaper, mortician: "mortician embalms data
+		  after reaper gets to it".
+		* Joe Barr - Bumblebee - Bertrand Meyer article
+
+
+2001/03/08
+Desk Transcriptions of notes I made after a BPM+FAST meeting (or meetings),
+finally being transcribed. The ideas are attributable to any combination of
+me, Allen, and Eric. Items preceded by a dash (-) are the notes I made, and
+those preceded by an asterisk (*) are notes I'm writing now, as I try to
+piece together what my original notes meant :)
+
+	- Package manager: You should be able to "find" package info for
+	something you're running from a share over the network, so you can
+	dynamically "pretend" you have the package installed.
+
+	* I think I meant that when you, for instance, mount a share of
+	some sort, and run programs from that location, the package manager
+	should be able to look across the network to that share and find
+	package info so it can "pretend" that the executable you merely
+	mounted actually belongs to some kind of "remote" package. This
+	also leads me to think of nifty subtleties like being able to
+	"overlay" upgrades onto your local system that only modify locally
+	things that are different since the shared version was
+	installed. Furthermore, when the shared version is upgraded, your
+	system's upgrade cruft could be scrubbed away, since it's no longer
+	necessary. Of course, if the shared copy is upgraded, you should
+	have the "power user" option of retaining the "downgraded" version
+	as a local patch to your system. Of course, all of this may be
+	treating symptoms, no? :)
+
+
+	- Bettter integration between package manager and, e.g., kernel
+	configuration.
+
+	* This one has to do with the as-yet unaddressed problem of
+	packages that depend on subtleties not just of kernel version,
+	etc., but also kernel configuration. For instance, a package that
+	depends on /var/shm support should be able to express that in a way
+	that the system groks. Oh. This makes me think of this, too: say
+	you cycle through kernels for testing or whatever. When you boot a
+	different kernel, it should dynamically analyze the dependancies
+	and mark packages that depend on features you now don't have (or
+	that are incompatible or whatever) as "off-limits". It could remove
+	them from the path, or something equivalent, forcing you to deal
+	with the inconsistency explicitly.
+
+
+	- Hierarchical dependancies / provides / requires
+
+	* I think this one simply means that dependancies and provides /
+	requires lists should cascade, so that something downstream might
+	implicitly satisfy a dependancy, even if it's not explicitly listed
+	as such. Furthermore, dependancy analysis should "go deep", showing
+	you not just what immediate dependancies of a given package are
+	missing or present, but also what the dependancies of -those-
+	packages, themselves, are.
+
+
+	- You ditch the soundcard with MIDI support, adding one
+	without. The tools say "should I ditch MIDI tools, or install a
+	MIDI emulator?"
+
+	* This one's obvious. Add to "the tools say" this phrase, too,
+	though: "or should I just leave things alone?". Hey. This makes me
+	think that, when deleting apps / whatever that have associated data
+	files that -you- created / downloaded / whatever (and, yes, the
+	system should know the difference between these and samples / data
+	files that are part of the package and not customized), the system
+	should prompt you to archive those things, so they're not
+	cluttering up your "main" workspace. Sort of like integrated HSM.
+
+
+	- You ditch the soundcard altogether, and the tools say "Should I
+	ditch support, or wait for you to get a new one?".
+
+
+	- Dependancies, of course, need to be better :) Remove crap that
+	isn't necessary any more.
+
+	* This one's simply stated as "when I'm not using it any more, get
+	rid of it." When a package is not an "app", itself, but is more of
+	a library or other satisfier of dependancies, and it is no longer
+	depended upon by any other apps, libraries, etc., then the system
+	should ditch it.
+
+
+	- A way to "mine" a system for dependancy / package info after the
+	fact, so when you install from sources, you can keep up to date...
+
+	* Of course, in the "ideal" system, this wouldn't be an issue, as
+	even "in development" software would include exhaustive dependancy
+	info by virtue of its having been created with intelligent
+	tools. Anyway, in the meantime, it would be nice to have the system
+	be able to periodically review itself and attempt to discern
+	relationships between apps and libraries, and among apps and
+	libraries, and use that info to populate a "soft" dependancies DB.
+
+
+	- Use that kernel module that detects changes to the FS to "auto
+	package" from sources:
+
+		- What's new?
+		- What *changed*?
+
+	Can we use strace, etc.? If you know a PID of the parent, can you
+	look and see what it's children are doing to the FS? i.e.: make?
+
+	* This one's just another basic statement of one of my current
+	themes, which is using intrusive kernel modules to trap / hook
+	system activity then try to make intelligent use of those hooks to
+	"backfill" and write code that fakes working the way a proper
+	system would -actually- work. In this case, the idea is simply to
+	trap filesystem activity based on, say, a "make install" process to
+	discover what changed in a more reliable way than the various "take
+	a snapshot of your FS, run make, then take another snapshot and
+	compare" tools. Then, armed with a manifest of changes, the system
+	ought to be able to create a rudimentary "package" out of that,
+	including those basic dependancies that can be discovered
+	"statically" by, e.g., ldd.
+
+
+	- Debian has/had something that let you pretend that you were
+	root. That is, if you said "chown root:root foo", even if you
+	couldn't do it ordinarily. Then, when you run, say, tar, it will
+	get the owner as root:root, even though it isn't, really.
+
+	* Ignore the sentence fragment, I was rushed :) The premise here is
+	that the tool would let you "pretend" to be root, and that changes
+	would "look" like they were done as root to other programs you ran
+	within the sandbox, even though they weren't "really" done as
+	root. Furthermore, those "as root" changes wouldn't "stick" once
+	you stopped running in the sandbox.
+
+	This is especially useful on development hosts where you're trying
+	to build, say, a filesystem for an embedded system. You want to be
+	able to mount the filesystem and use all of your normal tools on it
+	as though it were live, but you don't want to have to become root
+	just to make "rootly" things happen to the contents of the
+	filesystem. Of course, no "rootly" things would -actually- happen
+	to those contents, but you could, for instance, fool tar into
+	-thinking- rootly things had happened, which would let you tar up
+	the contents of a filesystem for later -real- placement on the
+	embedded target with "rootly" permissions, etc., intact.
+
+
+	- Heuristics in the "peer review", etc. stuff:
+
+		- "Trust this user's reviews"
+		- Track process statistics on packages and use those to
+		inform recommendations
+		- Use those same stats to "suggest" that you go ahead and
+		try something that's been sitting on your system,
+		unused. If not, would you like to ditch it?
+
+	* These are all related to the general idea of a "peer review"
+	based package selection and management system. One of my pet peeves
+	is these package descriptions that say "JoVE is a text editor" and
+	"use JoVE if you need to edit text documents", then later the same
+	installer says "VI is a text editor" and "use VI if you need to
+	edit text documents". They're telling you about the function of the
+	package, and about what -general- tasks it's suited to, but they're
+	not telling you anything about the popularity of the package, or
+	what -specific- tasks it's suited for, or why you might want vi
+	over emacs over jove over pico, or some combination of all of
+	them. With a "peer review" system (using trust metrics and all that
+	jazz), you could get feedback on all of these fine-grained details
+	to actually help you -decide- at install time -what- is worth
+	installing, using, or just trying out.
+
+	Furthermore, the system ought to track actual process usage of the
+	packages installed. When it sees that you're -not- using something,
+	it should suggest that you try it out, tell you what it does,
+	and relate it perhaps to something you're already using. For
+	instance, if you use vi all the time, it might say "hey, try out
+	vile, because it's all that vi is and more".
+
+	And, of course, if you end up -not- trying it out, the system can
+	always say "okay, let's ditch it." Maybe it can even put it way
+	down on your to-do list as "re-install this and play with it", so
+	you don't lose the "reference", but you ditch the files and recover
+	the space and clutter.
+
+
+	- Figure out how to discard unused crap over time :)
+
+	* This is, of course, related to the above, and to many of my other
+	micro-ideas. The bottom line is that the system needs to take a
+	certain amount of responsibility for its own state, since it
+	-can-. Granted, it needs the user's approval and what-not, but
+	there are a lot of good, basic, HSM techniques that should be
+	applied to package management and general system housecleaning. For
+	instance, if you didn't put the file there by some explicit action,
+	and it hasn't been used in eons, it probably doesn't need to be
+	there!
+
+
+	- When you install something in "try it out" mode, and you install
+	something that depends on it, it either upgrades you to "keeping
+	it", or installs the new thing, also, as a trial.
+
+	* This one is just about making sure the "value" of a package is no
+	less than the "value" of its dependants. It would be silly to
+	install something as a trial, then install something that depends
+	on it, then remove the trial and break the dependancy :)
+
+
+	- Stats would also suggest when to keep a trial package.
+
+	* In other words, the computer monitors your usage of the
+	package. If it notes that you're using it a lot, it suggests
+	upgrading it from "trial" mode to "keeping it" mode.
+
+
+	- Enter a file format and get back a list of suggested handlers,
+	both on your system and available elsewhere for install.
+
+
+	- Use multicast to advertise package availability.
+
+	* This would be basically something that multicasts package update
+	news like freshmeat, only without the pull, and without unicast
+	push. It would be nice if downstream receivers would cache package
+	updates, so that offline clients could receive them when they "wake
+	up", without taking up WAN bandwidth.
+
+
+	- Install docs properly, via some sort of mediator that puts things
+	in the "right" place, based on package, file format, etc.
+
+	* I'm not sure exactly what I was thinking here, but it might have
+	to do with, for instance, making sure you get man pages if that's
+	your fancy, or info or HTML or whatever, and putting it all in the
+	right place, with proper attention to package versions, and which
+	version of a given package is your "primary" one (ie: if you have
+	older versions around for compatibility or whatever, but there's a
+	particular version that you use "by default", then the docs that
+	come up when you just look for "help on <package>" should be the
+	ones for that "default" version.)
+
+
+	- Estabilishing canonical "bits" for services like, "which JVM" to
+	use, and how do I call it? That way, later scripts can find out not
+	just -which- JVM to use, but how. This might also imply a config /
+	args meta language like the one I've been thinking about.
+
+	* There are two issues here. The larger issue is coming up with a
+	standard way of representing configuration, arguments, services
+	provided and required (ie: JVM). Related to that, though, is what I
+	like to call the "OMG issue", which is then defining canonical
+	entities within that language that have meaning industry-wide. So,
+	for instance, the Java camp defines entities like the JVM, and what
+	options / detailed information is appropriate for a package to need
+	and a system to provide.
+
+	I call it the "OMG issue" because the OMG defined the "language"
+	syntax (CORBA), then the lexicon (CORBA services and such) shared
+	by specific industries for interoperability.
+
+
+2001/03/09
+More desk transcriptions from an -earlier- BPM+FAST meeting:
+
+	- Think about "sets" as a better word for "groups" (see back)
+
+	* The back doesn't seem to give much more info. Furthermore, this
+	is attached to the 2000/07/17 note about "tied variables", but I
+	can't for the life of me figure out how it relates. In that rant, I
+	don't mention "sets" -or- "groups", so I'm baffled.
+
+
+	- On Tied Variables:
+
+		- Consider X-Resource-like regexes: *font='...'
+		- Consider building up the "environment search" to be
+		something hookable, extensible, so you can add to the
+		search semantics.
+		- As an interim solution, consider using an app to set /
+		retrieve values, like NetBSD's printer config stuff
+
+	* Okay, I don't know about the NetBSD stuff, since I'm pretty sure
+	that's something Allen threw in, so I'll have to ask him about
+	it. The rest of it, though, is basically talking about implementing
+	the basic "configuration search" that I ended up writing into some
+	Perl and bash scripts I've done as an implicit and -extensible-
+	piece of the system. See the email to Tim Waugh about this
+	configuration stuff, and the webpage at
+	http://roml.sourceforge.net/, which more or less describes the
+	vision behind ROML, which deals with these ideas.
+
+	The short version is that I rewrite code that looks for
+	configuration options in environment variables, on the command
+	line, in configuration files, and finally from compiled-in
+	defaults. But the actually lookup process is totally fixed. I
+	can't, say, extend it to look for things in an LDAP or ACAP store,
+	or from some database, or from some other, as-yet-undesigned
+	source. I should be able to. ROML addresses that, in theory :)
+
+
+	- Date Parsing / Perforce:
+
+		- Check out cvsdiff -d "last week"
+
+	* I think this is just another of those random ideas about how to
+	make the SCM system, issue tracker, etc., work more intuitively and
+	let the operator ask human questions of the system.
+
+
+2001/03/13
+Time Tracker: Needs an idiot button for "oops, I've been working for ten
+minutes and forgot to clock in." It should be -easy- to do this, because I,
+for one, do it all the damned time.
+
+
+2001/03/14
+SCM / Issue Tracker / All Tools: All tools need to support snapshotting and
+the like to make backups work reliably and consistently.
+
+
+2001/03/15
+CASPER: VA Linux' "System Imager" has an incremental update mode which
+apparently only sends the new bits of an image. However, it seems to me
+that this would fail in the case of systems that had changed in-place. It's
+possible, though, that they're not doing "raw" partition dumping the way I
+do. Anyway, I'm thinking of a scheme that would actually do a "diff" of the
+raw image from the live machine to the pristine, updated image. Basically,
+the imaging server sends out MD5 hashes of all of the blocks, and any that
+are different the client requests. That minimizes the number of blocks
+sent, and the number of bytes... Of course, if, between five machines, they
+have differences in every single block, the server might as well just send
+out the raw image wholesale (which, of course, is what would end up
+happening :) ).
+
+
+2001/03/18
+ROML: A message posted to the subversion dev list about a patch to do
+"subcommand" processing outside of main() makes me think of this. Message
+info:
+
+Message-ID: <Pine.SOL.3.91.1010316195603.2378A-200000@cse.cygnus.com>
+Date: Fri, 16 Mar 2001 20:04:31 -0800 (PST)
+From: Mo DeJong <mdejong@cygnus.com>
+To: dev@subversion.tigris.org
+Subject: PATCH: process arguments in subcommands instead of main()
+
+This message made me recall the way p4, python's setup.py scripts, and
+other tools have "commands" underneat the main program, each command having
+its own set of valid arguments, etc., etc. Also, tools like setup.py can
+often have dynamically loaded commands (unlike p4, which I understand is
+compiled with its set of commands already set). I want ROML to support such
+"sub-commands", both statically and dynamically.
+
+Supporting static sub-commands is pretty straightforward, requiring only
+that ROML (the language) support them. Supporting dynamic sub-commands just
+means that I need to be able to plug in new command / configuration
+handlers, and that the "main" handler needs to be able to access these
+plugged-in handlers and their rulesets / etc.
+
+
+2001/03/20
+Expensieve, etc.: Most cellphone carriers will give you credit for
+"dropped" calls. Expensieve should support a bill-analysis plugin that will
+look for calls right after one another to the same number, indicating a
+dropped signal, and list those for credit requests.
+
+
+2001/03/21
+ROML: Looking at the args processing code for "buffer", and I notice that
+it does some checking in each arg handler to validate the arg against other
+settings (specific example is the "m" option checking to see if it has
+enough room to store the number of blocks specified). However, it's
+possible (I think) that this code will break if the options are specified
+"out of order".
+
+To remedy this sort of thing, ROML ought to explicitly differentiate
+between the act of -setting- an option and the act of -validating- options
+with respect to one another. The ROML engine might run one fragment of
+"setting" code on one pass, then run the "validating" code on a second
+pass. That way, the validating code is sure to be working on the right
+options.
+
+Actually, since you might want to set defaults if the specified values are
+invalid, ROML should support running through validating and possibly
+correcting until your ROML script either "gets it right" or "gives up".
+
+
+2001/03/22
+General app concept: it would be cool if, in general, you could more
+dynamically control apps. For instance, I've got a long tar job (8GB+ over
+a 100Mbps badly-tuned network) running through ssh and the "buffer"
+program. I'd like to "play" with buffer parameters so that I can try to get
+better streaming performance to the tape drive.
+
+
+2001/03/22
+System logging stuff: Part of my philosophy is that apps and systems should
+"take care of themselves" and learn about things dynamically. I've been
+spending a bit of time debugging a problem with tape drive performance when
+tarring over the network, and it finally hit me when I looked at the logs
+and saw all the transmitter timeouts. There exist fixes for this stuff!
+Wouldn't it be cool if the system automatically took flagged log messages
+and submitted them to a search engine thing that would return possible
+patches / updates / etc.? Then, instead of me taking forever to debug this
+thing, as I started my first test, the system would pop up a notice (not
+just a hidden log message) saying "hey! eth0's transmitter is timing out
+under load. That's been fixed. Go grab the newest eepro100 driver and
+install it!".
+
+
+2001/03/23
+Filesystems / Filestores: system ought to be able to mark files as being
+"cache", so that the system can automatically reclaim that space when those
+files are long unused. Example: GQView generates thumbnails and caches them
+under ~/.gqview_thmb/... -- there are five megs of those on my box right
+now. It would be nice if the system could automatically know to ditch
+those. Same thing with stale editor backup files (foo~ and the like).
+
+
+2001/04/01
+OS service information: an application or service ought to be able to ask
+the OS a basic question like "am I on a network?" with modifiers like "am I
+on a cheap network or an expensive network or what?", and "what sort of
+bandwidth do I have available". Furthermore, the app / service ought to be
+able to ask the OS to let it know when this information changes.
+
+Specifically, I was watching the startup messages scroll by, and I noticed
+LPD whining about not being able to get authoritative address information
+for zapf (my network printer). I figure, rather than asking for that name
+and getting back a timeout, the LPD ought to be able to ask the OS for
+general characteristics of the network it's on, and figure out whether or
+not it's going to be able to print. If it's not going to be able to print
+anyway, it should automatically revert to "offline mode", in which it:
+
+	- queues up files for later printing
+and
+	- renders files to PDF for immediate viewing
+
+(so, yes, it should do both, so you can see what kind of output you're
+eventually going to get, and so your jobs start streaming out of the
+printer as soon as you're at a "good" location for printing).
+
+Of course, there are some other heuristics that come into play, because you
+don't necessarily want your naughty pornos to come streaming out of the
+work printer (unless it's the wicked $10K dye-sub unit :) ).
+
+But the important part is about the app / service being able to discover
+-general- things about its environment by asking the OS for such general
+descriptions. Well, I shouldn't say "general", I should say "of varying
+detail", because it's up to the app / service and the OS together to try to
+agree on a level of detail to trade.
+
+
+2001/04/13
+ROML: Chuck and I were talking about COOLTOOL and resource bundles. He
+suggested a (convoluted) resource access scheme, and I countered with a
+shortened version:
+
+	self.get_resource( "foo.gif" )
+
+The idea is that "get_resource" comes for free as part of the "object-ness"
+of the thing, but can be overridden to provide specific behaviour or
+semantics. So then I had this inspiration of providing a mixin for ROML
+that would allow you to access configuration information through a
+similarly "easy" mechanism. The configuration lookup would basically be
+keyed off of the class itself.
+
+
+2001/04/15
+COOLTOOL: A thing that bugs me about Python is the lack of
+"interfaces". Python presumes that, because it allows multiple inheritance,
+you don't need "interfaces". The problem, though, is that people don't
+think of using an empty class (or a stubbed in class that raises
+exceptions) to define an 'interface', and that means that, for instance, if
+your class implements the map / dictionary functionality, or the list /
+tuple functionality, you can't check for that reliably.
+
+Consider the case of a method that takes as one of its parameters something
+that can either be scalar or a list. How do you determine whether it's a
+scalar or a list? You can't check to see if it's a string or an int or
+whatever, because what if it happens to be an object that -works- like a
+string or an int or whatever? You can't check it to see if it's a list or a
+tuple because, again, what if it's an object that -works- like a list or a
+tuple?
+
+There is the specific issue of typing and interfaces, but there is also the
+more general "classification" issue. It would be nice if the language
+offered definitions for some basic, oft-used in infrastructure
+classifications like "scalar", "compound", and "object", then allowed the
+implementation to choose which -ones- of those it was. For instance, a
+class might declare itself an object because it had members and methods,
+but might also declare itself scalar because, ultimately, it was behaving
+as a scalar, just souped up for some particular reason.
+
+This would allow methods which wanted to differentiate between, say, a
+string and a list to just ask "are you scalar, or are you a list?", and
+have the object reply intelligently.
+
+
+2001/04/19
+Ad-hoc pipes: How many times has this happened? You start downloading a
+file to machine A. For whatever reason, you also want to send it over to
+machine B, where you want to untar it and build it. Wouldn't it be nice if
+you could start the download to A, then start the copy to B, then start the
+untarring on B, even when the download wasn't yet finished? When the
+download was finished, the copy to B would complete, and then the untar on
+B would complete.
+
+I call the notion "ad-hoc pipes", because it's almost as though you
+downloaded to a named pipe on A, then put tee on the other end of the pipe
+and tee'd out to the filesystem on A and the copy process to B, which was
+copying to a named pipe on B which had tee sitting on the other end of
+-that-, dumping to the filesystem and piping to tar.
+
+Anyway, it would be nice because you would be able to tell the computer
+your entire intention, one step at a time, and then let it finish the
+job. You wouldn't even have to tell it your intention "up front", scripting
+out the entire thing. You'd just say "oh yeah, I want to copy that, too",
+and start a copy process which would do as much as it could, then block
+until it had more to do.
+
+
+2001/04/21
+Holistic Sysconfig: When I want to nuke an email alias / address, the
+system ought to be able to warn me that there are references to that email
+address on webpages, etc. Obviously, this would only work for things
+"local" to the system itself, or perhaps to the cluster served by the
+directory, but it would still be wickedly useful.
+
+
+2001/04/26
+Startup Stubs: When a workstation (desktop, laptop, etc.) starts up from
+scratch (ie: not just from hibernation), it shouldn't start every bloody
+service at once and make me wait. Rather, it should start up service
+-stubs- for things, that then lazily start the other services either on
+demand or when things slow down a bit (ie: after all the initial
+"interactive" stuff has gotten bootstrapped).
+
+When I say "on demand" here, I don't mean in the inetd "launch on every
+access" sense. I mean "launch into daemon mode on first access and stay
+that way at least until things calm down". In fact, more services ought to
+be designed to come and go, staying up long enough to eke reasonable
+performance out of things, but going away when they haven't been used in n
+minutes. Applications could make use of binary caches to make this sort of
+thing faster (the way emacs does on its first run ever).
+
+
+2001/05/02
+JavaScript Editorial Helper: watching discussion on the jGuru gurus list
+about post-processing user-entered text to "recognize" code snippets and
+the like, and throw <br> on the end, or wrap <pre> around. I'm thinking,
+since everything's going through editorial control, anyway, why not have
+some available JavaScript widgets that let you select a block of text and
+automatically apply some transformation to them? ie: "make list" or "make
+pre" or "make br" or what have you? I wonder if the browsers let you not
+just get the selection, but get information about where it is in the
+container? If not, then this is definitely a case for a purpose built UI
+in, oh, I dunno, Java? :)
+
+
+2001/05/03
+Package Manager / Dependancies / Sandboxing: The package manager, doing its
+dependancy analysis, might discover that A 1.0 requires B 2.0, but C 1.0
+requires B 1.0, and specifically -cannot- run with B 2.0. The manager, in
+that case, ought to offer the choices:
+
+	- upgrade C to a version compatible with B 2.0
+	- sandbox A, B, and C so that C can continue to use B 1.0, and A
+	  can use B 2.0.
+
+Not enough systems support sandboxing natively, but it's a pretty damned
+important concept. If it -were- widely used, we wouldn't see these nasty
+library upgrade conflicts we -always- see under Windows and occasionally
+(even so, too often) see under Unices.
+
+
+2001/05/15
+Env. Vars / "Reactive" filesystem: I was just thinking: PATH would be
+unnecessary if the filesystem "reacted" to you stuffing programs
+around. Actually, more like this: PATH becomes a list of locations to put
+into a hash... you can put directories in there, in which case that
+directory's contents get stuffed into the search list. You can also put
+individual files in there, in which case those files themselves get added
+to the search list (in whatever order you specified). Whenever you modify
+the filesystem (ie: put a new file into a directory or whatever), the PATH
+system has a hook that fires off to dynamically modify the PATH to reflect
+the live filesystem changes.
+
+Of course, all of this assumes that we'll even look at filesystems and
+PATHs and what-not in a way even vaguely similar to what we have now.
+
+
+2001/05/16
+Transcription from OLD sticky notes, etc.:
+
+	* Windows extension registry:
+
+	The "always use this application to open this type of file" thing
+	should be:
+
+		- available on a per-file basis, not just per extension
+		- get feedback from the app--if it wasn't able to open the
+		  file, the filetype association shouldn't "stick".
+
+
+	* ASL: Abstract Scripting Language:
+
+	A strict subset of Python designed for easy translation into other
+	languages. Well, at least _straightforward_ translation.
+
+
+	* Business / service ideas:
+
+		- encrypted offsite backup services
+		- data storage and retrieval for mobile users
+		- voicemail services w/lots of digital / nomad features
+		  (ie: routing voicemail, etc.)
+		- people locator: enter itinerary, tells you who you might
+		  run into, and where (friends, business associates, etc.)
+
+
+2001/05/21
+Short-term reminders: A lot of times, when I'm browsing or whatever, I
+won't be able to read something in its entirety, or I won't be able to get
+to the site, or whatever. I'd like to be able to place things like that in
+a "short term reminders" list that would always be "up top" somewhere, so I
+could remember to go back and look at something when it was available. This
+also might extend to having the system automatically retrieve and cache the
+content behind the scenes, so that it's "there" for me whenever I'm ready
+for it, even if it's not actually available (again) when I get around to
+it.
+
+
+2001/05/21
+Date-validated documents: Check out the message in my michael.payne about
+the email disclaimer. In that I suggest that we post the disclaimer at a
+URL that's fixed as of the date the disclaimer is posted (e.g., a
+disclaimer issued on May 16th, 2001 might be at
+http://example.com/email-disclaimer/20010516 ), and any mail going out
+covered by that disclaimer would include a link to it.
+
+However, what makes -more- sense, ultimately, is for the document to have a
+"lifetime", specified in the database somewhere. Any URL that falls within
+that "lifetime" will grab the right document. So, for instance, given a
+disclaimer posted on May 16th, 2001, which is then superseded by one posted
+on May 29th, 2001, the following URLs would have the described behaviour:
+
+	http://example.com/email-disclaimer/20010515 -> pre-5/16 disclaimer
+	http://example.com/email-disclaimer/20010516 -> 5/16 disclaimer
+	http://example.com/email-disclaimer/20010521 -> 5/16 disclaimer
+	http://example.com/email-disclaimer/20010525 -> 5/16 disclaimer
+	http://example.com/email-disclaimer/20010529 -> 5/29 disclaimer
+	http://example.com/email-disclaimer/20010530 -> 5/29 disclaimer
+
+and so on. Basically, given a date, the system returns the document that
+was valid as of that date. This allows people to either put a fixed URL in
+their email (that they manually change each time the disclaimer changes),
+or, if their MUA supports it, automatically generate the sig on each
+outgoing message to contain "today's date". That way, they always catch the
+latest disclaimer, even if it changes and they don't notice it. (you could
+also do this for MUAs that don't "support" dynamic sigs by putting a sig
+rewriter in a cron job or something).
+
+
+2001/05/29
+"Broken Software" button: A direct channel to the developers built in to
+all software. As an example, on this cruise, the name tags are all wrong
+because, while CI's software doesn't mind spaces, dashes, etc., the customs
+computer systems do. Thus, the users (Travel Agents) all enter customer
+information without any spaces, dashes, etc. This information will probably
+-never- make it back to the developers, who will never write any code to
+separate what goes to customs from what CI and the cruise line use
+internally.
+
+An agent ought to be able to click the hypothetical "broken software"
+button to send a message directly to the developers describing this
+problem. Users should be trained to use the "broken software" button
+-whenever- they find themselves working around something, or whenever the
+system doesn't offer them what they need.
+
+
+2001/06/05
+John read my note about bug dependancies (2000/06/09) and commented about
+using dependancies as weights for prioritizing bugs. That is, bugs which
+have lots of dependancies (ie: A must be fixed before B can be) should have
+higher priority.
+
+Also, graphical views on bugtrackers. John just said this out loud, but
+it's been in my "assumptions" for a while, so I figure I should write it
+out.
+
+
+2001/06/05
+Good thread on the subversion mailing list about build tools, including a
+discussion of recursive vs. single makefiles.
+
+
+2001/06/05
+Issue Tracker: For software issues, there should be a way to differentiate
+"regressions" (ie: new failures introduced in once working subsystems) from
+"buggy new features" (ie: newly introduced features which contain
+bugs). Also, a way of noting whether or not a workaround exists for the
+issue and what it is. I -think- BugParade (Sun JDC) has this. I know I've
+seen it somewhere.
+
+
+2001/06/07
+Logging: sitting in the "Logging APIs for Java" session at JavaOne. Talking
+about dynamic configuration, and about being able to configure
+"hierarchically" so that you can constrain detailed logging to just the
+area you're exploring. However, that constraint is "static", in the sense
+that you can only constrain by section of the -code- that you're
+investigating (ie: show me everything about what happens within
+java.awt.foo). But what about constraining by where in the -stack- you are?
+In other words, while I'm in the method java.awt.Button.foo, show me
+everything that happens, no matter where it is in the class hierarchy. That
+is, constrain things by the state of the runtime stack.
+
+They also mention doing "late-bound" internationalization (my
+term). Basically, when you're writing your code, you write log messages in
+your native languages, as strings (ie: "something happened"). Then, later,
+you write a message catalog that translates that string into other
+languages. Problem is, what happens when you change that original string in
+the code? It breaks all of the translations you built.
+
+What might be better is if the language understood autovivification in
+certain contexts. For instance:
+
+	log( CRITICAL, SOMETHING_CRITICAL_HAPPENED )
+
+Now, left to its own devices, the system would automatically define
+SOMETHING_CRITICAL_HAPPENED as "UNDEF: SOMETHING CRITICAL HAPPENED" (UNDEF
+means there's no explicit definition of SOMETHING_CRITICAL_HAPPENED).
+
+This might be just as ugly, because there might be a temptation to just
+edit SOMETHING_CRITICAL_HAPPENED to, say,
+SOMETHING_REALLY_CRITICAL_HAPPENED, which brings you back to the original
+problem. Perhaps this is an issue that needs to be addressed at a higher
+level, perhaps in the development environment itself? That is, when I put
+in a log message "something happened", the environment might automatically
+create an "empty" test catalog bound to that string, and when that string
+changes in a given context, the environment warns me that a catalog
+exists. If there's only one call to that particular string, it might
+automatically move the catalog to the new string. Otherwise, it might say
+"hey, what should I do here? make a new catalog, change the old catalog and
+move the old ones?
+
+
+Also talking about logging levels: Levels ought to be hierarchical. That
+is, they're definining FINE, FINER, and FINEST for trace messages. Why not
+define TRACE.FINE, TRACE.FINER, TRACE.FINEST and so forth? This would allow
+one to enable "TRACE" and see everything. Sometimes, you might want to see
+FINEST but NOT see FINE and FINER.
+
+Nice idea: LogManager will allow you to set configuration for named loggers
+BEFORE they are actually activated. That allows you to set configs at app
+startup, even before all of the subsystems have registered their logs.
+
+logging.FileHandler doesn't seem to handle date-based rotation, at least
+not as presented here. Also, what about different names for different
+logs? I guess you just plug in different handlers or something? I'm
+thinking of the Apache way of defining what goes into the Error log, the
+Access log, the Referrer log, and so forth. How do you tell java.util.log
+classes what content goes where?
+
+The formatting stuff is pretty wicked. Dumping to XML is pretty nice, since
+they seem to have put together a decent DTD for the log records.
+
+For ROML: Need to look at Java's ResourceBundle concept. From what I
+recall, I really didn't like the way they did it. Is this something that
+ROML can or should address, too?
+
+Logging: cool! They have convenience methods for logging at particular
+levels:
+
+	severe( "this is severe" )
+	info( "this is informational" )
+
+That's a pretty nice idea. I wonder how we could use autovivification to
+make that more flexible?
+
+One of the problems they have (and I've seen in Python, too, I think) is
+that the virtual machine can't tell you where in the stack you are. That's
+often pretty danged important. One of the specific problems in the JVM is
+that the spec allows you to do some radical optimizations (for JIT, for
+example) that corrupt the VM's knowledge of the stack position.
+
+I'm looking at the sample, and it does this:
+
+	void doStuff () {
+		logger.finer( "entered doStuff" )
+		...
+	}
+
+This pattern is one I see (and do) a lot when debugging. WHY ISN'T THIS
+IMPLICIT? Why can't I just turn on "show me method entry and exit,
+branches, etc."? It seems like this should be something the VM should
+offer.
+
+Also, he's talking about the performance cost of this:
+
+	logger.finest( "read " + count + " bytes" );
+
+and saying "don't do it". Here's why: logger.finest is responsible for
+figuring out whether or not to actually pass the log based on whether or
+not it's enabled. I'm wondering, though... could we build into the language
+a facility that would give the same kind of performance you get from a C
+Macro that says "if( logging ) { ... }"? That means the actual log calls
+themselves never happen if logging is turned off, which means that code in
+the parameter list will never get executed, either.
+
+It seems to me that the LogManager ought to be able to insinuate itself
+deeply enough that it can short-circuit parameter evaluation when it's just
+going to discard the message, anyway.
+
+Also, I wonder, are there efficient ways to turn on prolific logging
+permanently at low cost when you're not actually viewing them? Consider:
+for the most part, log messages are constants. When they're not, they're
+often at least constant *formulas* (ie: constant string "read ", integer
+"count", constant string " bytes"). Is there a way for the compiler to
+resolve this down into a log message that would contain just a few bytes
+describing timestamp, location, message, and variable data?
+
+What I really want is to be able to turn on post-mortem debugging
+logs. That is, I want "finest" level to be available to me even when I
+didn't turn it on originally, and after something happens. I think it's
+possible, with some clever coding, to offer this without significant
+performance impact.
+
+Good guideline from the logging guy:
+
+	SEVERE, WARNING, INFO:
+		- human visible issues
+		- not for problems the app can handle itself
+		- e.g., not for TCP connection failure
+
+
+Logging API spec at : http://java.sun.com/jcp/review/jsr047/spec.pdf
+
+
+One really cool thing: you can hand an exception object directly to the
+logger and it will properly "handle" it.
+
+An audience member talks about the need to have information out of the
+larger context when you're writing a "human readable" messages.
+
+Stinky (Alex Chafee) asks about instances versus classes: that is, being
+able to hold separate logs for each instance, not just per class. I think
+you can write a handler to deal with this.
+
+Audience member asks about statefulness of filters: specific scenario is
+wanting to pay attention to a type of message only after many of them have
+come through. I'm reminded of what I see in my syslogs - "last message
+repeated n times"
+
+Another audience member asks about performance penalties since all of the
+logging and filtering is done in process, instead of just being shoveled
+out to a central facility to then be processed. See my notes above :)
+
+
+2001/06/07
+Talking with Eric Rizzo and John Mitchell at Thirsty Bear (SFO): about Java
+Community Process - it's overwhelmed by the heavyweights who can never
+agree on anything because they're all vying for competitive advantage. How
+does this compare to what's happening in the IETF today? How can we prevent
+this in our endeavour?
+
+Also, talking about logging APIs: John brings up the need to differentiate
+between things that -must- get written, and things that can be dumped if
+necessary (so, in other words, caching / buffering). I'm also thinking
+that, if the logging is an intrinsic part of the language (or, at least, in
+the micro-kernel sense explored below), there should be no reason for log
+messages to get "lost" anywhere. That is, log messages should (or could) be
+considered sacred. Even if the application code crashes, the VM can ensure
+that any pending messages make it to storage, or the network, or
+whatever. The only case in which that might -not- happen is if something
+segfaults, but even then, it should all just work.
+
+John says look at the proceedings from this year's Java Grande,
+specifically the Kava paper. It talks about what primitives a language
+needs and how you can build up from them. This is in response to my comment
+about treating a language as a malleable "micro-kernel" that can be
+extended in whatever ways necessary to implement the "right" set of
+constructs for solving hard problems.
+
+
+2001/06/18
+Expensieve / Selfish: I'm cracking open expensieve again, and starting to
+think about some of how it's going to work when it's become
+Selfish. Specifically, I need to think quite hard about how to handle the
+"schema migration" problem. In other words, as the system evolves, and the
+"object model" evolves with it, how will we track changes to individual
+objects to make sure they conform? One of the benefits of the
+prototype-based OOP model is that individual objects are allowed to evolve
+as needs dictate. However, when it comes time to make wholesale changes,
+how do we cope with those individual objects that evolved differently? Is
+it enough to mark all such "differing" objects in the IDE so that we are
+aware they exist, and can deal with them on a case-by-case basis?
+
+Anyway, it's a topic for further deep thought.
+
+
+2001/06/18
+Indention-based Parsers: Need to write a generic parsing engine for easily
+creating indention-based parsers. Something that will tokenize them,
+including special tokens for "indention" whitespace. Perhaps this is
+something to build on top of ANTLR? Basically, I want to make it as easy to
+create indention-based parsers as it currently is to create XML-based
+parsers. XML is great for data interchange, but bad for human interface.
+
+
+2001/06/19
+Issue Tracker: Reading this message in the Ximian support archives:
+
+	http://lists.ximian.com/archives/public/support/2001-May/001358.html
+
+I'm thinking that all of this would be much easier if these issues were
+part of some global namespace that each issue tracking server could
+export. That way, Ximian people could maintain a server for Ximian issues,
+and the server at gnome.org could submit Ximian-specific bugs to it,
+etc. Of course, there are schema-conversion issues and what-not, but
+basically what I'm getting at is more of my "grand unified theory of every
+fucking thing." :)
+
+
+2001/06/21
+Window Management: This post from Tim Bannister to the sawfish list raises
+some good points about window management and metadata:
+
+	From isoma@compsoc.man.ac.uk Sun, 22 Apr 2001 11:46:37 +0100 (BST)
+	Date: Sun, 22 Apr 2001 11:46:37 +0100 (BST)
+	From: Tim Bannister isoma@compsoc.man.ac.uk
+	Subject: Making MDI-windows manageable?
+
+(see the archives at
+http://lists.eazel.com/pipermail/sawfish/2001-April.txt for the actual
+message text).
+
+
+
+2001/07/05
+SCM: in Perforce, I don't like that I can't do an integrate, delete, and
+edit to the same file all in the same transaction. Fairly often, I want to
+rename a file at the same time that I'm making a bunch of changes to it,
+because its purpose is changing (usually because it's becoming more
+general). I'd like to be able to accomplish the rename -and- some initial
+changes all at once.
+
+
+2001/07/05
+Package / Installation Management: I just uninstalled "Gateway.net" from a
+machine, and it did something quite cool: it asked if I wanted to keep
+downloaded files, and stuff like that, and then it put them on the desktop
+(basically, so I'd know where they were). Now, granted, there are some
+specifics I'd like more control over (like where it puts them, etc.), but,
+in general, the idea that it "does something" with those files to call them
+out so you can go and cull them manually is cool.
+
+
+2001/08/12
+
+From the subversion dev list:
+
+On Fri, Aug 10, 2001 at 10:42:04PM -0000, kfogel@tigris.org wrote:
+>...
+>   +const char *
+>   +svn_fs_db_lockfile (svn_fs_t *fs)
+>   +{
+>   +  return apr_psprintf (fs->pool, "%s/%s",
+>   +                       fs->lock_path,
+>   +                       SVN_FS__REPOS_DB_LOCKFILE);
+
+The above is more efficient as:
+
+       return apr_pstrcat (fs->pool,
+                           fs->lock_path,
+                           "/" SVN_FS__REPOS_DB_LOCKFILE,
+                           NULL);
+
+--
+I'm thinking that the compiler (or some kind of precompiling optimizer)
+ought to be able to pick apart format strings and rewrite them into simple,
+optimal concatenations.
+
+
+2001/10/18
+Package / Installation Management: I'm installing Corel WordPerfect Suite 8
+on Irene's machine for work. I want that install to match what her current
+install is on another machine at work. It would be nice if I could tell her
+current machine to dump her install / config to a file that I could schlep
+over to the new target machine to use when I'm installing stuff onto that
+machine. I could choose to install WordPerfect "just like it is" on her
+other machine, or tweak it from that as a base, or whatever.
+
+
+
+2001/11/16
+Language Design: I'd like a language that would allow me to specify
+"opposites". That is, I want to call a variable "DO EVAL", but if at some
+point I say "DON'T EVAL", I want that to automatically negate "DO
+EVAL". It's the old variable naming quandary: do you name it so it makes
+sense when you *set* it, or do you name it so it makes sense when you *use*
+it?
+
+	$dont_eval = 1 if something bad happened;
+	eval if $do_eval;
+	eval unless $dont_eval;
+
+and so on...
+
+
+2001/12/01
+Filesystem organization: this isn't like most of my other ideas, where I
+want something substantially better than what is :) This is just a thought
+about how to make life a little easier as a sysadmin dealing with multiple
+kernel versions.
+
+Basically, when you build a new kernel version, package it in a directory
+with the random userspace tools you need specific to that version. For
+instance, if you compile in the latest and greatest LVM (Logical Volume
+Manager), you're going to need userspace tools that match that specific
+version.
+
+This way, when you boot, you can put /sbin/kernel-name into the path
+automagically, so that you use the "correct" versions of those userspace
+tools.
+
+Hmm. Too bad uname doesn't report on what versions of various subsystems /
+modules in the kernel you have. Or that (AFAIK) the kernel doesn't give any
+good way to report the specific version of a particular module, since
+modules can and do vary independantly of the released kernel.
+
+
+
+2001/12/17
+Package Management: why doesn't rpm have a trivial way of displaying both a
+package's description and everything that depends on what it provides?
+
+	rpm -qi pkg
+	rpm -q --provides pkg | xargs rpm -q --whatrequires
+
+Only this doesn't *quite* work because the output of --provides has some
+extra information that can break --whatrequires.
+
+
+2002/01/04
+SCM: I want to be able to branch from what's in my filesystem, without
+having to push my pending changes permanently back into the
+repository. That is, let's say I'm working in a dev branch, and I'm halfway
+through some change. Now along comes a bug (in that branch) that I've got
+to fight. I want to branch from the dev branch to fight the bug, but I'm
+not ready to check in my changes. But I want the bugfighting branch to
+reflect what I've got in my workspace.
+
+I guess this is one of those cases where my "micro-changes" idea might make
+some sense. So, you just check stuff in all the time (possibly even to the
+point of implicit checkin every time you save the file). Then, when you
+reach an inflection point, you "commit" a marker that subsumes all of those
+changes. So you could branch from any point (including from micro-changes),
+but things don't "solidify" until you commit the marker.
+
+Or something. I'm just sure there's a better way waiting out
+there. Something with the speed and easy of a dircopy, but without the
+wading through mud that it takes to resolve and such.
+
+
+2002/01/06
+Package Management: (sorta, anyway). I've got a bunch of tarballs in
+/var/opt/cheap/packages, and they're uncompressed for building / etc in
+/var/opt/cheap/build. I want a quick way to purge .../build, but without
+destroying anything I've actually customized, and without necessarily
+losing my configure (and similar) output. Have to think some about
+this. It's not enough to simply track whether or not the dir has changed,
+because it might have changed just as a result of building, and we could
+discard those changes (and the uncompressed sources, relying on the
+tarball).
+
+Maybe the "real" answer is something as simple as keeping track of some
+notes about each package, and some flags I can set when I download it and
+play with it.
+
+
+2002/04/09
+Misc Utils: I want a program that will take a file containing lines of text
+and present it so that I can "check" lines off. I want to be able to batch
+a bunch of lines together, too, to be treated as one "thing".
+
+Here's what often happens: I run some job that generates a bunch of lines
+of text output, where each line is "significant". Then I have to go through
+each line and do something with it. So I print out the lines, and cross
+through them or highlight them or whatever as I process them. I'd rather do
+this electronically, since then I can undo my treatment of lines.
+
+I -don't- want to do this in a spreadsheet (though I'd accept a set of
+macros / etc. built in a spreadsheet), because I want simple, one-click (or
+one keypress / etc.) commands to set the state of a line, or to select a
+bunch of lines to treat together, or whatever. Going through the damned
+format menu or whatever in the spreadsheet is a pain. (Yes, I know that the
+toolbar item for the paintcan keeps the last color you used from it for
+one-click access, but I want a palette of one-click colors I can apply).
+
+
+2002/05/03
+Write-through Filesystem: I want to take a CD-ROM (or other read-only
+media) and mount it as a "writable" filesystem. The idea is that the writes
+would write "past" the CD onto some writable medium.
+
+The motivation for this is simple: I want to be able to use a read-only
+system image for things like VMWare. I want to point VMWare to a file
+that's my "hard drive image" for a particular configuration, but have it
+still be able to write to that image, as far as it's concerned. When I'm
+finished with the session, I can choose to discard the written info, or
+perhaps save it later and mount the CD-ROM plus that newly written stuff to
+create a hybrid filesystem that represents the "state" of the filesystem
+when I shut VMWare down.
+
+I could explain this better, I'm sure.
+
+
+2002/05/10
+Write-through Filesystem:
+
+I just found this on freshmeat:
+
+	http://freshmeat.net/projects/translucency/?topic_id=143%2C142
+
+It also occurs to me that I'll need to be able to do something "smarter"
+for VMWare, since I think it uses a big file and treats it as a disk
+device. It seems like it wouldn't be very efficient, my scheme, since it
+would just end up writing a new big-ass copy of that file when the smallest
+change occured.
+
+Then again, part of my idea was just to make it "seem" like the writes were
+happening. I guess, if the VMWare stuff is seeking and writing portions, I
+could do something reasonable.
+
+
+# This is for Emacs' benefit:
+# Local Variables:      ***
+# mode: fundamental	***
+# mode: auto-fill       ***
+# fill-column:  75      ***
+# tab-width: 8		***
+# End:                  ***
+

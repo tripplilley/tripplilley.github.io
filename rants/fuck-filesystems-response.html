@@ -1,0 +1,193 @@
+    <p>
+      Seth, thanks for the response. Believe it or not, I have no
+      particular interest in being "right" on the issue of whether or
+      not Nautilus is revolutionary :) I'd much prefer to hear that
+      I'm wrong, and that the world is changing.
+    </p>
+
+    <p>
+      I don't want to go into a lengthy response, either, mainly as
+      I'm trying desperately to get offline and onto the road, but,
+      here are a few highlights:
+    </p>
+
+    <p>
+      <b>Medusa</b> sounds like a very strong direction. At the
+      same time, I caution you to not make the same mistakes BeOS
+      did, which is to say ignoring the work of the RDBMS industry
+      (though I'm not a fan of RDBMSes) and, more importantly, the
+      scads of academic work put into semantic networks. I'm not
+      quite sure what you mean by the phrase <i>"multi-key,
+	semantically queried virtual filesystem"</i>. Okay, I get
+      "virtual filesystem", and I can stab at what multi-key and
+      semantically queried mean, but I'm not sure what precise
+      synthesis you folks have in mind.
+    </p>
+
+    <p>
+      To clarify, since I haven't seen any good, introductory
+      material on semantic networks for anything other than
+      linguistic applications, I'll "drop a little science" (note,
+      Seth, I'm not presuming that you do or do not know anything
+      about semnets. I'm posting this for general edification.)
+    </p>
+
+    <p>
+      Semantic networks, roughly speaking, are large graph
+      structures with bidirectional semantics applied to
+      edges. Nodes themselves, in a "true" semnet, contain no
+      content. Content is implied by traversing edges and
+      "reading" the semantics in the direction of your
+      traversal. Nodes themselves are just the
+      connectors. However, in the "modified" semnets which most
+      people actually <i>use</i> to get "real" work done, the
+      nodes do store data, and the semantics of the edges imply
+      metadata and (gasp!) <i>information</i> about the nodes and
+      their relationship to one another.
+    </p>
+
+    <p>
+      This phrase "bidirectional semantics" has a simple meaning:
+      meaning! An edge has a phrase describing it in one
+      direction, and the converse of that phrase describing it in
+      the other direction. Example "seth (is-friend-of /
+      has-friend) tripp". Read from left to right, "seth is a
+      friend of tripp." Read from right to left, "tripp has friend
+      seth". Not that this does not imply anything about how
+      <i>seth</i> feels about the friendship :) My offering
+      friendship to seth only says I'm extending a hand and
+      consider him a friend. If he "accepts", then we'd add
+      another edge between the same two nodes, with the same
+      semantics, but reversed direction: tripp (is-friend-of /
+      has-friend) seth.
+    </p>
+
+    <p>
+      This, of course, brings up the issue that there can be a
+      plurality of edges between nodes. Thus, you can arbitrarily
+      add lots of meaning to basic data by interrelating it with
+      other data. Also wickedly cool is the fact that an edge
+      itself can be treated as a node. So you can now take the
+      edge "is-friend-of / has-friend" between seth and tripp, and
+      mark <i>it</i> with edges relating it to, say, a start date
+      (ie: the date of my peace offering :) ). Because of this,
+      that means it's also meaningful to have multiple edges
+      between the same two nodes with those edges having the same
+      semantics <i>and</i> the same <i>direction</i>. If you did
+      construct such a graph, it would presumably be because those
+      edges themselves were further modified by other edges
+      pointing out somewheres, lending the two similar edges
+      uniqueness by how <i>they</i> are modified.
+    </p>
+
+    <p>
+      The fundamental offering of a semnet is to separate
+      <i>content</i> (ie: data) from <i>position</i> and
+      <i>relationship.</i> In a semnet, <i>position</i> is how a
+      node is determined to be unique in the world. There is no
+      implicit requirement for unique data, as it will become
+      unique by virtue of how you relate it to other data. (Of
+      course, as implementations go, there are unique IDs
+      generated, etc., etc., but all of this is abstracted away by
+      the semnet engine itself, and not something you worry about
+      when manipulating the network.)
+    </p>
+
+    <p>
+      So, to bring things back to Eazel, Nautilus, and Medusa, my
+      argument is primarily that we need to be looking at technologies
+      such as this (which, incidentally, is older than I am :) ) to
+      revolutionize the way we <i>conceptualize</i> the manipulation
+      of information. Thus the pointer to <a
+	href="http://www.framerd.org/">Framer-D</a> in my original
+      post :)
+    </p>
+
+    <p>
+      However, I do want to point out (as if anyone's still reading)
+      that I understand the necessary schism between
+      <i><b>re</b>volutionary</i> and <i><b>e</b>volutionary</i>. Been
+      there, done that, etc. :) My rant was written in a moment of
+      weakness, and I forgot my compassion for the trials of the
+      implementor. I believe in and have experienced the necessity of
+      evolutionary progress toward revolutionary goals. I, myself, am
+      engaged in such progress with my own projects, so I don't
+      begrudge you the "preview releases" and "1.0s" and so forth that
+      are a part of the process.
+    </p>
+
+    <p>
+      At the same time, I humbly propose that it might do Nautilus
+      well to provide periodic "capsule overviews" (brain screenshots,
+      if you will) of what's going on in your heads,
+      architecturally. I realize there are mailing lists, CVS repos,
+      etc., but (pardon my lazy ass :) ), that's an awful lot of
+      investment for someone who's not yet sure of where you're going,
+      and whether his/her energies would be best spent diving into
+      Nautilus or forging ahead with something else.
+    </p>
+
+    <p>
+      What I mean by this is that you should give more webshare to
+      "open architectural process". Not that you should open up to
+      random flaming, etc., etc., but posting summaries of what you're
+      thinking in the loooong term, how it all fits together,
+      etc. Documents that can be easily digested, reflected upon, and
+      so forth. An example that springs to mind is the old XPFE / XUI
+      stuff that the Mozilla folk wrote. Those were pretty
+      straightforward docs that said "here's where we want to go,
+      ultimately." As I am a critic by trade (well, consultant), I
+      took perverse delight in printing those out and marking the hell
+      out of them! :) Though I disagreed with things, I at least knew
+      <i>what</i>, precisely, I was disagreeing with :)
+    </p>
+
+    <p>
+      I'm bringing this up because of my aforementioned experience
+      with the BeBox. I bought a BeBox at a time when my consultancy
+      really couldn't afford it :) I dove into being a developer,
+      learning the tools, reading huge volumes of mail and newsgroup
+      flak, and so forth. Ultimately, I dropped my BeOS project(s)
+      because of a number of reasons. The one I remember most vividly,
+      though, was my disappointment at what they <i>weren't</i>
+      revolutionizing (see bedevtalk and comp.sys.be archives for
+      specifics). A lot of us poured a lot of energy and effort into
+      discussions about what we'd like to see, and what revolutions
+      were possible. To Be's credit, they listened and responded as
+      much as they were able, but there were some fundamental
+      decisions that had long since been made, and were unchangeable.
+    </p>
+    
+    <p>
+      As open source projects, GNOME, HelixCode (GNOME++?), and
+      Eazel's offerings (Nautilus and whatever else is under the
+      covers) promise a relief from that frustration. Ultimately, if
+      we have the source, we can go in whatever direction we
+      like. However, we all know that, practically, that's a lot
+      harder if the architecture is cast, and our direction(s) diverge
+      from assumptions made by the architects. Encouraging early
+      feedback, even if only at the 50,000 foot level, on the
+      architecture is a good thing for a project of this magnitude and
+      potential impact :)
+    </p>
+
+    <p>
+      I do want to set aside this paragraph to clarify what I'm saying
+      above. There already exist mailing lists, CVS repositories, and
+      feedback mechanisms for giving our two cents' worth to the
+      developers. No worries there :) What does not exist (or at
+      least, not obviously from a casual traverse of the website) is a
+      low-overhead architectural primer. A tool that a person can use
+      to decide, fundamentally, if it's worth going any further for
+      them down this path. Some of us old farts feel burned by past
+      experiences, and <i>don't</i> want to slog, gung-ho and
+      head-first, into another mailing list and development project
+      without some vague idea that what's going on under the hood is
+      powerful mojo, and that them what runs things will listen to
+      carefully considered flames :)
+    </p>
+
+    <p>
+      Thanks for listening... and don't take things personally, I'm
+      just prematurely bitter and jaded :)
+    </p>
