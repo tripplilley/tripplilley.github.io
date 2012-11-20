@@ -1,0 +1,29 @@
+---
+layout: html5bp
+title: "Tripp Lilley :: tripplilley [at] gmail [dot] com"
+---
+
+h1. Tripp Lilley
+
+tripplilley [at] gmail [dot] com
+125 N Main St Suite 500 PMB 242
+Blacksburg, VA 24060
++1 (540) 585 4298 (voice)
+
+
+h2. Objective
+
+To contribute to the long term growth of a team of gifted, motivated problem solvers, committed to excellence, as a systems architect, integration specialist, software developer, infrastructure architect, toolsmith, and general troubleshooter.
+
+To share and expand my skills, experience, and knowledge, and provide leadership and guidance.
+
+
+h2. Strengths
+
+From my "Clifton StrengthsFinder 2.0":http://strengths.gallup.com/110440/About-StrengthsFinder-20.aspx profile, my top five strengths are:
+
+# Strategic
+# Relator
+# Learner
+# Ideation
+# Command
