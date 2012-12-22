@@ -1,0 +1,158 @@
+ /* Styles for my (Tripp Lilley's) resume
+    http://tripplilley.com/resume/
+ */
+
+ /* document default styles */
+ body {
+  width: 7.5in;
+  font-family: Trebuchet MS, Times Roman, serif;
+  font-size: 12pt;
+}
+
+h1 {
+  font-size: 150%;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  background-color: #7777FF;
+  padding: 0.1em 0.2em 0.1em 0.2em;
+
+  border: 2px solid black;
+  border-top-width: 0;
+  border-right-width: 0;
+
+  text-align: left;
+  clear: both;
+}
+
+h2 {
+  font-size: 125%;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  background-color: #CCCCFF;
+  padding: 0.1em 0.2em 0.1em 0.2em;
+
+  border: 1px solid black;
+  border-top-width: 0;
+  border-right-width: 0;
+
+  margin-top: 2em;
+
+  text-align: left;
+  clear: both;
+}
+
+h3 {
+  font-size: 100%;
+  font-family: Trebuchet MS, Times Roman, serif;
+
+  text-align: left;
+  clear: both;
+}
+
+
+/* elements by id */
+
+div#masthead {
+  float: left;
+  clear: both;
+
+  font-size: 80%;
+
+  margin-top: -1em;
+  margin-bottom: 2em;
+
+  width: 7.5in;
+}
+
+div#masthead #name {
+  margin-bottom: 0;
+}
+
+/* contact_info is the left side of the masthead */
+div#contact_info {
+  float: left;
+  clear: none;
+  text-align: left;
+
+  /* @@ NOTE: we have a different margin here than in
+     our right sibling, #bragging_rights, because our
+     contact field groups have a built in top margin
+     (and I don't remember how margins and padding collapse.)
+
+     */
+
+   margin-top: 0.75em;
+}
+
+div#contact_info span.contact_field {
+  text-align: left;
+}
+
+div#contact_info div.electronic_addresses {
+  margin-top: 0.25em; 
+}
+
+div#contact_info div.mailing_addresses {
+  margin-top: 0.25em; 
+}
+
+div#contact_info div.mailing_addresses div.street_address {
+}
+
+div#contact_info div.mailing_addresses div.postal_zone {
+}
+
+div#contact_info span.street_address:after {
+  content: ", ";
+}
+
+div#contact_info span.city {
+  clear: both;
+}
+
+div#contact_info span.city:after {
+  content: ", ";
+}
+
+div#contact_info div.telecom_addresses {
+  margin-top: 0.25em; 
+}
+
+
+/* bragging_rights is the right side of the masthead */
+div#bragging_rights {
+  float: right;
+  clear: none;
+  text-align: right;
+
+  margin-top: 1em;
+}
+
+
+
+/* elements by class */
+
+div.contact_block {
+}
+
+div.pagewidth {
+  width: 7.5in;
+  clear: both;
+}
+
+p.groupdesc {
+  margin-left: 2em;
+}
+ul.group {
+  margin-left: 4em;
+}
+
+li.project {
+  margin-top: 1em;
+}
+span.client {
+  font-weight: bold;
+}
+
+br.break {
+  clear: both;
+}
+
