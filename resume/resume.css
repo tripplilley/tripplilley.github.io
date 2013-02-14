@@ -81,40 +81,15 @@ div#contact_info {
 
    margin-top: 0.75em;
 }
-
-div#contact_info span.contact_field {
-  text-align: left;
-}
-
-div#contact_info div.electronic_addresses {
-  margin-top: 0.25em; 
-}
-
-div#contact_info div.mailing_addresses {
-  margin-top: 0.25em; 
-}
-
-div#contact_info div.mailing_addresses div.street_address {
-}
-
-div#contact_info div.mailing_addresses div.postal_zone {
-}
-
-div#contact_info span.street_address:after {
-  content: ", ";
-}
-
-div#contact_info span.city {
-  clear: both;
-}
-
-div#contact_info span.city:after {
-  content: ", ";
-}
-
-div#contact_info div.telecom_addresses {
-  margin-top: 0.25em; 
-}
+div#contact_info span.contact_field                       { text-align: left;   }
+div#contact_info div.electronic_addresses                 { margin-top: 0.25em; }
+div#contact_info div.mailing_addresses                    { margin-top: 0.25em; }
+div#contact_info div.mailing_addresses div.street_address {                     }
+div#contact_info div.mailing_addresses div.postal_zone    {                     }
+div#contact_info span.street_address:after                { content: ", ";      }
+div#contact_info span.city                                { clear: both;        }
+div#contact_info span.city:after                          { content: ", ";      }
+div#contact_info div.telecom_addresses                    { margin-top: 0.25em; }
 
 
 /* bragging_rights is the right side of the masthead */
