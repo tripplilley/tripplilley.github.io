@@ -19,7 +19,7 @@
   padding: 20px 30px 20px 30px;
   margin: 0;
 
-  background: #eeeeee;
+  background: #eee;
   border: none;
   border-bottom: 1px solid #666;
 }
@@ -43,7 +43,7 @@
 
 #header-email {
   line-height: 40px; /* same as h1 */
-  color: #888888;
+  color: #888;
 }
 
 #header-email u {
@@ -51,7 +51,7 @@
      See http://html5doctor.com/u-element/
    */
 
-  color: #cccccc;
+  color: #ccc;
   text-decoration: none;
 }
 
