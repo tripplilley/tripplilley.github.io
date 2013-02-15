@@ -1,3 +1,3 @@
 guard 'livereload' do
-  watch(%r{.*\.(css|html|js)$})
+  watch(%r{.+\.(css|html|js)$})
 end
