@@ -4,3 +4,16 @@
 
  */
 
+#header-email {
+  line-height: 40px; /* same as h1 */
+  color: #888888;
+}
+
+#header-email u {
+  /* yes, I'm using it properly...
+     See http://html5doctor.com/u-element/
+   */
+
+  color: #cccccc;
+  text-decoration: none;
+}
