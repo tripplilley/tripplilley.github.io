@@ -42,3 +42,26 @@
 #content {
   padding: 120px 30px 30px 30px; /* to float below the header */
 }
+
+#main {
+  padding-left: 45px;
+}
+
+#badgers {
+  margin-top: 60px;
+}
+
+#stackoverflow {
+  margin-bottom: 10px;
+}
+
+#github iframe {
+  width: 200px;
+  height: 142px;
+
+  padding-left: 4px;
+  padding-right: 4px;
+  overflow: hidden;
+
+  border: 0;
+}
