@@ -4,6 +4,27 @@
 
  */
 
+.page-header {
+  width: 100%;
+  padding: 0 0 20px 0;
+  margin: 0;
+  border: none;
+  background: white;
+}
+
+.page-header .container-fluid {
+  padding: 0;
+}
+
+.page-header h1 {
+  padding: 20px 30px 20px 30px;
+  margin: 0;
+
+  background: #eeeeee;
+  border: none;
+  border-bottom: 1px solid #bbbbbb;
+}
+
 #header-email {
   line-height: 40px; /* same as h1 */
   color: #888888;
@@ -16,4 +37,8 @@
 
   color: #cccccc;
   text-decoration: none;
+}
+
+#content {
+  padding: 120px 30px 30px 30px; /* to float below the header */
 }
