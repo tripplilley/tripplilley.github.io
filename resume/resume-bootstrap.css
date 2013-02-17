@@ -41,6 +41,9 @@
   height: 10px;
 }
 
+#header-container {
+}
+
 #header-email {
   line-height: 40px; /* same as h1 */
   color: #888;
@@ -57,6 +60,12 @@
 
 #content {
   padding: 120px 30px 30px 30px; /* to float below the header */
+}
+
+#content-body {
+}
+
+#section-nav {
 }
 
 #main {
