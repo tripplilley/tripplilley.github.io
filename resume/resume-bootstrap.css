@@ -15,15 +15,6 @@
   padding: 0;
 }
 
-.page-header h1 {
-  padding: 20px 30px 20px 30px;
-  margin: 0;
-
-  background: #eee;
-  border: none;
-  border-bottom: 1px solid #666;
-}
-
 .shadow-bottom {
   /* why this `background` mess, instead of `*-box-shadow`?  because
      `box-shadow` doesn't fill to the edges. It has a radius, and I
@@ -50,6 +41,12 @@
 }
 
 #header-container {
+  padding: 20px 30px 20px 30px;
+  margin: 0;
+
+  background: #eee;
+  border: none;
+  border-bottom: 1px solid #666;
 }
 
 #header-email {
