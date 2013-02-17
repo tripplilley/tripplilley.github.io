@@ -4,6 +4,10 @@
 
  */
 
+@import url(../assets/css/fonts/Engagement.css);
+@import url(../assets/css/fonts/Roboto.css);
+@import url(../assets/css/fonts/Roboto_Condensed.css);
+
 .page-header {
   width: 100%;
   padding: 0;
@@ -32,10 +36,12 @@
   height: 10px;
 }
 
-.well {
-  /* background-color: #eee; */
-  /* border: 1px solid #ddd; */
+.font-multi-shadow {
+  text-shadow: .02em .02em 0 rgba(255, 255, 255, .9), .04em .04em 0 rgba(200, 200, 200, .9);
+  -webkit-text-shadow: .02em .02em 0 rgba(255, 255, 255, .9), .04em .04em 0 rgba(200, 200, 200, .9);
+}
 
+.well {
   background: #e9e9ff;
   border: 1px solid #aac;
 }
@@ -47,12 +53,42 @@
   background: #eee;
   border: none;
   border-bottom: 1px solid #666;
+
+  position: relative;
 }
 
 #header-name {
+  font-family: Engagement;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 112px;
+  line-height: normal;
+
+  margin: 6px 0 -20px 0;
 }
 
 #header-contact {
+  position: absolute;
+
+  /* geometry of skillcloud:                       */
+  /*   + content padding-left:  2.564102564102564% */
+  /*   + offset9 margin-left:   79.48717948717949% */
+  /*   + span2   width:         14.52991452991453% */
+  /*                                               */
+  /* right edge of skillcloud:  3.418803418803407% */
+  /* (which is where right edge of email goes)     */
+  right: 3.418803418803407%;
+  bottom: 15px;
+
+  margin: 80px 0 0 0;
+  text-align: right;
+
+  color: #888;
+
+  font-family: Roboto Condensed, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 21px;
 }
 
 #header-contact .email {
@@ -69,16 +105,50 @@
 }
 
 #content {
-  padding: 120px 2.564102564102564% 30px 2.564102564102564%; /* to float below the header */
+  padding: 192px 2.564102564102564% 30px 2.564102564102564%; /* to float below the header */
 }
 
 #content-body {
 }
 
 #section-nav {
+  font-family: Roboto Condensed, sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+#section-nav > ul > li > a {
+  padding: 9px 0;
+  margin: 0;
 }
 
 #main {
+}
+
+#main > section {
+  margin: 0 0 21px 0;
+}
+
+#main > section > h2 {
+  margin: 0;
+
+  font-family: Roboto Condensed, sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+#main > section > h3 {
+  margin: 0;
+
+  font-family: Roboto Condensed, sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+
+  text-align: right;
+  border-bottom: 1px solid #666;
+  padding: 0;
+  margin-bottom: 16px;
+  margin-top: 21px;
 }
 
 #skillcloud-wrapper {
@@ -88,6 +158,11 @@
 }
 
 #skillcloud {
+
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+
   text-align: right;
   background: #e9e9ff;
   border: 1px solid #aac;
