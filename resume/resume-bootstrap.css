@@ -62,3 +62,19 @@
 #main {
   padding-left: 45px;
 }
+
+#skillcloud-wrapper {
+  padding-right: 0;
+  margin-right: 0;
+
+}
+
+#skillcloud {
+  text-align: right;
+  background: #e9e9ff;
+  border: 1px solid #aac;
+}
+
+#skillcloud ul {
+  list-style-type: none;
+}
