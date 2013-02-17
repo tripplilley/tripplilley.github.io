@@ -41,7 +41,7 @@
 }
 
 #header-container {
-  padding: 20px 30px 20px 30px;
+  padding: 0 2.564102564102564% 0 2.564102564102564%;
   margin: 0;
 
   background: #eee;
@@ -64,7 +64,7 @@
 }
 
 #content {
-  padding: 120px 30px 30px 30px; /* to float below the header */
+  padding: 120px 2.564102564102564% 30px 2.564102564102564%; /* to float below the header */
 }
 
 #content-body {
