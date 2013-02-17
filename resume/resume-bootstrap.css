@@ -49,12 +49,17 @@
   border-bottom: 1px solid #666;
 }
 
-#header-email {
-  line-height: 40px; /* same as h1 */
+#header-name {
+}
+
+#header-contact {
+}
+
+#header-contact .email {
   color: #555;
 }
 
-#header-email u {
+#header-contact .email u {
   /* yes, I'm using it properly...
      See http://html5doctor.com/u-element/
    */
