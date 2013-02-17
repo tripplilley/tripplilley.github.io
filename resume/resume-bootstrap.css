@@ -41,6 +41,14 @@
   height: 10px;
 }
 
+.well {
+  /* background-color: #eee; */
+  /* border: 1px solid #ddd; */
+
+  background: #e9e9ff;
+  border: 1px solid #aac;
+}
+
 #header-container {
 }
 
@@ -54,7 +62,7 @@
      See http://html5doctor.com/u-element/
    */
 
-  color: #ccc;
+  color: #888;
   text-decoration: none;
 }
 
