@@ -198,3 +198,22 @@ section.skillgroup h3 {
 #skillcloud ul {
   list-style-type: none;
 }
+
+section.project {
+  margin-bottom: 32px;
+}
+
+section.project h3 {
+  margin: 0;
+  margin-top: 6px;
+  margin-bottom: 18px;
+  padding: 0;
+
+  font-family: Roboto Condensed, sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: normal;
+
+  text-align: right;
+  border-bottom: 1px solid #666;
+}
