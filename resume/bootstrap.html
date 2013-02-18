@@ -60,7 +60,18 @@
         <!-- </aside> -->
 
         <div id="main" class="offset2 span7">
-          <section id="objective">
+          <!--
+              **HACK:** I couldn't figure out the specificity to get
+              this to work from the stylesheet (without adding it to a
+              style for *each* `id`!) At least, putting it here, I can
+              keep it close to where it applies.
+
+              +/- 192px to offset scroll to anchor
+              See http://stackoverflow.com/a/13881860
+
+              **NOTE:** This repeats for each `section.nav-target`
+            -->
+          <section id="objective" class="nav-target" style="padding-top: 192px; margin-top: -192px">
             <h2>Objective</h2>
             <p>
               To contribute to a team of gifted, motivated problem solvers,
@@ -74,7 +85,7 @@
 	        </p>
           </section>
 
-          <section id="career-summary">
+          <section id="career-summary" class="nav-target" style="padding-top: 192px; margin-top: -192px">
             <h2>Career Summary</h2>
             <p>
               As a general technologist, I&apos;ve acquired an expansive body of
@@ -103,7 +114,7 @@
             </p>
           </section>
 
-          <section id="functional-summary">
+          <section id="functional-summary" class="nav-target" style="padding-top: 192px; margin-top: -192px">
             <h2>Functional Summary</h2>
             <p>
               I&apos;ve been a software developer, systems and infrastructure
@@ -136,7 +147,7 @@
             </ul>
           </section>
 
-          <section id="programming-skills">
+          <section id="programming-skills" class="nav-target" style="padding-top: 192px; margin-top: -192px">
             <h2>Programming Skills</h2>
             <h3>Programming Languages</h3>
             <p class="groupdesc">
@@ -206,7 +217,7 @@
             </ul>
           </section>
 
-          <section id="technology-skills">
+          <section id="technology-skills" class="nav-target" style="padding-top: 192px; margin-top: -192px">
             <h2>Technology Skills</h2>
             <h3>Software Environment and Infrastructure Technologies</h3>
 
@@ -268,7 +279,7 @@
             </ul>
           </section>
 
-          <section id="projects">
+          <section id="projects" class="nav-target" style="padding-top: 192px; margin-top: -192px">
             <h2>Significant Projects and Responsibilities</h2>
             <ul>
 		      <li class="project">
