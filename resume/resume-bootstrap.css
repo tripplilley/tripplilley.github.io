@@ -37,8 +37,8 @@
 }
 
 .font-multi-shadow {
-  text-shadow: .01em .01em 0 #EBEAE8, .02em .02em 0 #989088;
-  -webkit-text-shadow: .01em .01em 0 #EBEAE8, .02em .02em 0 #989088;
+  text-shadow: 1px 1px 0 #1c000d, -1px -1px 0 #1c000d, -1px 2px 0 #1c000d, 4px 4px 12px #1c000d;
+  -webkit-text-shadow: 1px 1px 0 #1c000d, -1px -1px 0 #1c000d, -1px 2px 0 #1c000d, 4px 4px 12px #1c000d;
 }
 
 .well {
@@ -50,15 +50,22 @@
   padding: 0 2.564102564102564% 0 2.564102564102564%;
   margin: 0;
 
-  background: #C8C3BF;
   border: none;
   border-bottom: 1px solid #362C23;
 
   position: relative;
+
+  background: -moz-linear-gradient(top, #1c000e, #4f0027);
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#1c000e), to(#4f0027));
+  background: -webkit-linear-gradient(top, #1c000e, #4f0027);
+  background: -o-linear-gradient(top, #1c000e, #4f0027);
+  background: linear-gradient(to bottom, #1c000e, #4f0027);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c000e', endColorstr='#4f0027', GradientType=0);
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c000e', endColorstr='#4f0027', GradientType=0);
 }
 
 #header-name {
-  color: #45382D;
+  color: #fff;
 
   font-family: Engagement;
   font-weight: 400;
@@ -85,7 +92,7 @@
   margin: 80px 0 0 0;
   text-align: right;
 
-  color: #645141;
+  color: #ffe6ef;
 
   font-family: Roboto Condensed, sans-serif;
   font-weight: 300;
