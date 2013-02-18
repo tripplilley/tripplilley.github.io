@@ -140,6 +140,10 @@
   background: #DFDDDA;
 }
 
+.nav-pills > .active > a {
+  background: #C7B7A9;
+}
+
 #main {
 }
 
