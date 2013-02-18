@@ -159,13 +159,20 @@
   font-size: 24px;
 }
 
-#main > section > h3 {
-  margin: 21px 0 16px 0;
+section.skillgroup {
+  margin-bottom: 32px;
+}
+
+section.skillgroup h3 {
+  margin: 0;
+  margin-top: 6px;
+  margin-bottom: 18px;
   padding: 0;
 
   font-family: Roboto Condensed, sans-serif;
   font-weight: 300;
   font-size: 18px;
+  line-height: normal;
 
   text-align: right;
   border-bottom: 1px solid #666;
