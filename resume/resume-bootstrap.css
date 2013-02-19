@@ -37,13 +37,13 @@
 }
 
 .font-multi-shadow {
-  text-shadow: 1px 1px 0 #1c000d, -1px -1px 0 #1c000d, -1px 2px 0 #1c000d, 4px 4px 12px #1c000d;
-  -webkit-text-shadow: 1px 1px 0 #1c000d, -1px -1px 0 #1c000d, -1px 2px 0 #1c000d, 4px 4px 12px #1c000d;
+  text-shadow: 1px 1px 0 #1c000e, -1px -1px 0 #1c000e, -1px 2px 0 #1c000e, 4px 4px 12px #1c000e;
+  -webkit-text-shadow: 1px 1px 0 #1c000e, -1px -1px 0 #1c000e, -1px 2px 0 #1c000e, 4px 4px 12px #1c000e;
 }
 
 .well {
-  background: #EBEAE8;
-  border: 1px solid #D1C4B9;
+  background: #ffeff9;
+  border: 1px solid #ae7c97;
 }
 
 #header-container {
@@ -51,7 +51,7 @@
   margin: 0;
 
   border: none;
-  border-bottom: 1px solid #362C23;
+  border-bottom: 1px solid #1c000e;
 
   position: relative;
 
@@ -127,6 +127,10 @@
 
   padding: 15px 0;
   margin: 0;
+
+  box-shadow: 6px 6px 12px rgba(160, 160, 160, .5);
+  -moz-box-shadow: 6px 6px 12px rgba(160, 160, 160, .5);
+  -webkit-box-shadow: 6px 6px 12px rgba(160, 160, 160, .5);
 }
 
 #section-nav > ul {
@@ -140,15 +144,15 @@
 }
 
 #section-nav > ul > li > a {
-  color: #735E4B;
+  color: #714259;
 }
 
 #section-nav > ul > li > a:hover {
-  background: #DFDDDA;
+  background: #ECE0E6;
 }
 
 .nav-pills > .active > a {
-  background: #C7B7A9;
+  background: #E3CFD9;
 }
 
 #main {
