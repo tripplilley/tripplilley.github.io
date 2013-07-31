@@ -1,667 +1,797 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
     <title>Tripp Lilley :: tripplilley [at] gmail [dot] com</title>
-    <link rel="stylesheet" type="text/css" href="resume.css">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tripp Lilley's résumé">
+    <meta name="author"      content="Tripp Lilley &lt;tripplilley [at] gmail [dot] com&gt;">
+
+    <!-- Le styles -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="resume-bootstrap.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon"                                href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"   href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed"                 href="../assets/ico/apple-touch-icon-57-precomposed.png">
   </head>
-  <body>
-    <div id="masthead">
-      <h1 id="name">Tripp Lilley</h1>
-      <div id="contact_info" class="contact_info">
-        <!-- @@ TODO: factor individual contact_field rules to contact_groups?
-	     (i.e., let fields inherit from groups.) What do we do with
-	     nested groups (like mailing_addresses -> street_address
-	     and mailing_addresses -> postal_zone, below?
-	  -->
-        <div class="contact_group electronic_addresses">
-          <span class="email_address contact_field">tripplilley [at] gmail [dot] com</span>
-	</div><!-- electronic_addresses -->
- 
-        <div class="contact_group mailing_addresses">
-	  <div class="contact_group street_address">
-            <span class="contact_field street_address">3440 Vaidens Ct</span>
-	  </div><!-- street_address -->
-	  <div class="contact_group postal_zone">
-            <span class="contact_field city">Lanexa</span>
-            <span class="contact_field state">VA</span>
-            <span class="contact_field zip_code">23089</span>
-	  </div><!-- postal_zone -->
-        </div><!-- mailing addresses -->
- 
-        <div class="contact_group telecom_addresses">
-          <span class="contact_field phone_number">
-	    <span class="contact_field_value phone_number">+1 (540) 585-4298</span>
-	    (<span class="contact_field_label">voice</span>)
-	  </span><!-- phone_number -->
-	</div><!-- telecom_addresses -->
-      </div><!-- contact_info -->
 
-      <div id="bragging_rights">
-        <div id="stack_overflow">
-          <a href="http://stackoverflow.com/users/309233/tripp-lilley">
-            <img
-              src="http://stackoverflow.com/users/flair/309233.png"
-              width="208" height="58"
-              alt=  "profile for Tripp Lilley at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
-              title="profile for Tripp Lilley at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
-              >
-          </a>
-        </div><!-- stack_overflow -->
-      </div><!-- bragging_rights -->
-    </div><!-- masthead -->
+  <body data-spy="scroll" data-target="#section-nav" data-offset="192">
+    <header id="masthead" class="page-header affix">
+      <div id="header-container" class="container-fluid">
+        <div class="row-fluid">
+          <div id="header-name" class="font-multi-shadow pull-left">
+            tripp lilley
+          </div>
+          <address id="header-contact" class="offset8 span3 pull-right">
+            <span class="email">tripplilley<u>@</u>gmail.com</span><br>
+            3440 Vaidens Ct. • Lanexa, VA 23089 (USA)<br>
+            <span class="phone">+1 540 585 4298</span><br>
+            <span class="links">
+              <a href="https://github.com/tripplilley">github</a>
+              <u>|</u>
+              <a href="http://stackoverflow.com/users/309233/tripp-lilley">stack overflow</a>
+              <u>|</u>
+              <a href="http://www.goodreads.com/review/show/67792806">careers 2.0</a>
+              <u>|</u>
+              <a href="http://linkedin.com/in/tripplilley">linkedin</a>
+            </span>
+          </address>
+        </div>
+      </div>
+      <div class="shadow-bottom">&nbsp;</div>
+    </header>
 
+    <div id="content" class="container-fluid">
+      <div id="content-body" class="row-fluid">
 
-    <h2>Objective</h2>
-    <p>
-      To contribute to a team of gifted, motivated problem solvers,
-      committed to excellence, as a <span>systems architect</span>,
-      <span>integration specialist</span>, <span>software
-      developer</span>, <span>infrastructure architect</span>,
-      <span>toolsmith</span>, or <span>general
-      troubleshooter</span>. To use and expand my skills, experience,
-      and knowledge, in the pursuit of personal and professional
-      growth and positive change.
-		</p>
-
-    <h2>Career Summary</h2>
-    <p>
-      As a general technologist, I&apos;ve acquired an expansive body of
-      skills, experience, and knowledge of technologies,
-      methodologies, and problem domains. I&apos;ve delved deeply into the
-      unique problems of, and principle technologies behind:
-    </p>
-
-    <ul>
-      <li>Systems support and infrastructure for software development and deployment</li>
-      <li>Digital Multimedia, graphic design and prepress</li>
-      <li>Network design, deployment, and operations (including network security)</li>
-      <li>Accounting (of assets, inventory, debts, transactions, and time)</li>
-      <li>Content- and Asset-management for web-based publication</li>
-      <li>Workflow and digital document management</li>
-      <li>Premises security (i.e., alarms, locks, etc.)</li>
-    </ul>
-
-    <p>
-      Since my start in the industry in 1989, I&apos;ve dedicated myself to
-      understanding problem domains, technologies, and the human
-      factors issues that bridge those two worlds. In the intervening
-      decade and a half of work, I&apos;ve acquired a unique and thorough
-      blend of experiences with systems, solutions, and the business
-      problems to which the solutions apply.
-    </p>
-
-
-    <h2>Functional Summary</h2>
-    <p>
-      I&apos;ve been a software developer, systems and infrastructure
-      architect, and general technologist, de facto human factors
-      consultant, graphic designer, and support technician. I
-      understand technology from the lowest levels to the highest, and
-      am comfortable operating at any and all of those levels.
-    </p>
-
-    <p>
-      I have exceptional talents for:
-    </p>
-
-    <ul>
-      <li>Analysis, pattern discovery, and synthesis</li>
-      <li>System architecture</li>
-      <li>Human and computer language (especially metaphor and analogy)</li>
-    </ul>
-
-    <p>
-      I have specific skills in, and passions for:
-    </p>
-
-    <ul>
-      <li>Infrastructure software (i.e., software in support of other technological ends)</li>
-      <li>Visual design and layout, in both traditional and electronic media</li>
-      <li>Data mining, especially scrubbing and cleansing, and reverse-engineering</li>
-      <li>Software frameworks (i.e., rationalizing code into libraries, toolsets, etc.)</li>
-      <li>Bridging technology gaps (e.g., inter-language integration)</li>
-    </ul>
-
-
-    <h2>Programming Skills</h2>
-    <h3>Programming Languages</h3>
-    <p class="groupdesc">
-      I list these in three groups. In the first group are those
-      languages in which I have achieved mastery and worked
-      &ldquo;deep black magic.&rdquo; I list them in reverse
-      chronological order of my initial experience with them (which
-      roughly approximates the order of my mastery and adoption of
-      each of them as my language of choice, although in several cases
-      there is significant overlap.)
-    </p>
-
-    <ul class="group">
-      <li>Python</li>
-      <li>JavaScript <em>(with emphasis on prototype-based OOP features)</em></li>
-      <li>Perl</li>
-      <li>Java</li>
-      <li>MC68HC11 Assembly</li>
-      <li>Visual Basic</li>
-      <li>C++</li>
-      <li>C</li>
-    </ul>
-
-    <p class="groupdesc">
-      In the second group are those languages with which I have
-      achieved familiarity and the ability to accomplish functional
-      work, but have not had occasion or specific reason to explore in
-      more depth. I list these in reverse order of my skill level with
-      them (greatest to least.)
-    </p>
-
-    <ul class="group">
-      <li>Jython <em>(Python implemented in Java)</em></li>
-      <li>Emacs LISP / LISP / AutoLISP</li>
-    </ul>
-
-    <p class="groupdesc">
-      In the third group are those languages with which I have a
-      conceptual familiarity and have written &ldquo;toy&rdquo;
-      programs to exercise concepts, but have not written significant
-      code, or even short, task-specific programs. I group these
-      (roughly) by language type:
-    </p>
-
-    <ul class="group">
-      <li>Self, CLOS, Prolog</li>
-      <li>Z80 Assembly <em>(have reverse-engineered from machine code)</em></li>
-    </ul>
-
-
-    <h3>Other Languages</h3>
-    <p class="groupdesc">
-      These are purpose-specific languages which, even when
-      <em>Turing-complete</em>, are narrow in their scope. I group
-      these (roughly) by type and purpose, but the groups are
-      otherwise unordered.
-    </p>
-
-    <ul class="group">
-      <li><strong>Generalized Markup:</strong> SGML, XML, YAML</li>
-      <li><strong>Stylesheets and Layout:</strong> PostScript , CSS1, CSS2+Positioning, XSLT + XSL-FO</li>
-      <li><strong>Hypertext Markup and Layout:</strong> HTML, XHTML</li>
-      <li><strong>Document Markup:</strong> L<sup>A</sup>T<sub>E</sub>X</li>
-      <li><strong>Text Search:</strong> Regular Expressions <em>(POSIX, Perl, Python, and other extended forms)</em></li>
-      <li><strong>Object Schema:</strong> CORBA IDL, XML Schema, Relax NG</li>
-      <li><strong>Database Schema and Querying:</strong> SQL</li>
-    </ul>
-
-
-    <h2>Technology Skills</h2>
-    <h3>Software Environment and Infrastructure Technologies</h3>
-
-    <p class="groupdesc">
-      Here I include technologies I view as a part of the deployment
-      &ldquo;environment&rdquo; in which software runs, including the
-      infrastructure upon which the software is based. I group these
-      by technology family, and within each group, list its members
-      in chronological order of my initial exposure to them.
-    </p>
-    <ul class="group">
-      <li><strong>IPC/RPC:</strong> Sockets, DCE-RPC, COM/DCOM, CORBA IIOP, Java RMI, XML-RPC, REST</li>
-      <li><strong>Filesharing:</strong> SMB/CIFS, NFS, WebDAV <em>(at the protocol level)</em></li>
-      <li><strong>Data Persistence:</strong> Flat-file, RDBMS, Semantic Net, BTrieve/DBM, OO, ORDBMS, XML</li>
-      <li><strong>UI:</strong> CLI, Text-mode windowing, GUI, Web forms, Web-based DHTML+JavaScript, Flash</li>
-    </ul>
-
-    <h3>Software Development Infrastructure Technologies</h3>
-    <p class="groupdesc">
-      Here I include the technologies I view as a part of the process
-      of building software. This includes specific compiler suites,
-      toolchains, etc. This list is not exhaustive, but indicative. I
-      group these by tool family, and within each group, list its
-      members by my rating of their worth in solving the problem
-      (greatest to least.)
-    </p>
-    <ul class="group">
-      <li><strong>Source Management:</strong> Perforce SCM, Subversion, CVS, RCS</li>
-      <li><strong>Dependancy Management:</strong> GNU Make, MS nmake</li>
-      <li><strong>Compilation/Toolchain:</strong> GCC+GNU toolchain, Borland C/C++, MS Visual C/C++</li>
-      <li><strong>Parsing/Lexing:</strong> ANTLR, PCCTS, Flex+Bison, Lex+YACC</li>
-    </ul>
-
-    <h3>Operating Systems / Platforms</h3>
-    <p class="groupdesc">
-      Here I include the hardware and software platforms on which
-      everything runs, including &ldquo;virtual&rdquo; platforms
-      implemented on top of other environments.
-    </p>
-    <ul class="group">
-      <li><strong>Hardware Platforms:</strong> Intel-based PC (from 8086 ISA through current technology, including PC104(+)), Motorola 68k-based Macintosh, PowerPC-based Macintosh, Sun SPARC-based workstations (5, 20, Ultra), Palm, Sony Cli&eacute;, custom embedded platforms</li>
-      <li><strong>Operating Systems:</strong> MS-DOS, Microsoft Windows (3.x, 95/8, NT/2000, XP), Linux (Red Hat, Mandrake, Gentoo, LNX-BBC, LFS, Hand-built embedded), NetBSD, Solaris, Mac OS (pre-OS X and OS X), BeOS</li>
-      <li><strong>Virtual Environments:</strong> Cygwin, Java Virtual Machine <em>(at the bytecode level)</em>, VMWare</li>
-      <li><strong>Networking Technologies:</strong> IP (TCP+UDP), DNS, DHCP, RADIUS, NTP, LDAP &amp; A/D, Infoblox NIOS, 10/100/1000 Ethernet, cable plants (Cat3/5, termination), Fluke One-Touch, Fluke LANmeter, PathMaster, Net-Hopper switches, layer 0-8 troubleshooting and diagnosis (0: financial, 8: political), routing, switching, firewalls (ipchains/iptables/shorewall), NAT, IPSec, SSH, SSL, Ethereal (etc.)</li>
-    </ul>
-
-    <h3>General Productivity Applications and Technologies</h3>
-    <p class="groupdesc">
-      It ought to go without saying that, as a seasoned software
-      developer, I know my way around just about any piece of software
-      into which I come into contact. However, every package has its
-      idiosyncrasies, so it&apos;s important to know just which ones I use
-      regularly enough to call myself &ldquo;skilled&rdquo; in them.
-    </p>
-    <ul class="group">
-      <li><strong>Office Suites:</strong> Microsoft Office (through 2003, including XML), WordPerfect Office (through 10), StarOffice / OpenOffice 2.x (including XML)</li>
-      <li><strong>Graphics / Multimedia Tools:</strong> Adobe Photoshop, The GIMP, CorelDraw!, PageMaker, Macromedia StudioMX (Flash, Fireworks, Freehand, Dreamweaver), AutoCAD <em>(including programmatic control via ActiveX and AutoLISP)</em></li>
-      <li><strong>Financial Suites:</strong> GNUCash, Quickbooks, Quicken, Microsoft Money Small Business</li>
-    </ul>
-
-
-    <h2>Significant Projects and Responsibilities</h2>
-    <ul>
-			<li class="project">
-				<a name="infoblox"><span class="client">Infoblox, Inc.:</span></a>
-				<ul>
-					<li>
-						Worked with customers to develop architecture for DNS,
-						DHCP, and other core network services around the Infoblox
-						platform.
-					</li>
-					<li>
-						Performed customer deployment and data migration as part
-						of the Professional Services group.
-					</li>
-					<li>
-						Designed and developed customized operator user interfaces
-						around the platform API.
-					</li>
-					<li>
-						Designed the next-generation basis for customized operator
-						user interfaces, providing high-level abstractions and
-						services on top of the core platform API.
-					</li>
-				</ul>
-			</li>
-      <li class="project">
-        <a name="krugle"><span class="client">Krugle, Inc.:</span></a>
-        <ul>
-          <li>
-            Responsible for initial population of the &ldquo;rich
-            search&rdquo; data set, including scraping and normalizing
-            ill-formed data sources, canonicalizing data from multiple
-            sources, and resolving multiple sources to produce a
-            single, comprehensive view of the data.
-          </li>
-          <li>
-            Wrote scraping and crawling code for:
-            <ul>
-              <li>Wikipedia (MediaWiki markup)</li>
-              <li>
-                Open-source project metadata:
-                <ul>
-                  <li>SourceForge (using FLOSSmole data)</li>
-                  <li>Freshmeat</li>
-                  <li>Apache Project</li>
-                  <li>DOAP <em>(Description Of A Project)</em></li>
-                </ul>
-              </li>
-              <li>Javadoc <em>(from HTML)</em></li>
+        <div id="leftside" class="span2 affix">
+          <nav id="section-nav" class="well">
+            <ul class="nav nav-pills nav-stacked">
+              <li><a href="#objective">Objective</a></li>
+              <li><a href="#career-summary">Career Summary</a></li>
+              <li><a href="#functional-summary">Functional Summary</a></li>
+              <li><a href="#programming-skills">Programming Skills</a></li>
+              <li><a href="#technology-skills">Technology Skills</a></li>
+              <li><a href="#projects">Significant Projects</a></li>
             </ul>
-          </li>
-          <li>
-            Created extensible, canonical internal XML markup
-            standards for three major datatypes:
+          </nav>
+        </div><!-- leftside -->
+
+        <!-- <aside id="skillcloud" class="well offset9 span2 pull-right affix"> -->
+        <!--   <ul/> -->
+        <!-- </aside> -->
+
+        <div id="main" class="offset2 span7">
+          <!--
+              **HACK:** I couldn't figure out the specificity to get
+              this to work from the stylesheet (without adding it to a
+              style for *each* `id`!) At least, putting it here, I can
+              keep it close to where it applies.
+
+              +/- 192px to offset scroll to anchor
+              See http://stackoverflow.com/a/13881860
+
+              **NOTE:** This repeats for each `section.nav-target`
+            -->
+          <section id="objective" class="nav-target" style="padding-top: 192px; margin-top: -192px">
+            <h2>Objective</h2>
+            <p>
+              To contribute to a team of gifted, motivated problem solvers,
+              committed to excellence, as a <span>systems architect</span>,
+              <span>integration specialist</span>, <span>software
+                developer</span>, <span>infrastructure architect</span>,
+              <span>toolsmith</span>, or <span>general
+                troubleshooter</span>. To use and expand my skills, experience,
+              and knowledge, in the pursuit of personal and professional
+              growth and positive change.
+	        </p>
+          </section>
+
+          <section id="career-summary" class="nav-target" style="padding-top: 192px; margin-top: -192px">
+            <h2>Career Summary</h2>
+            <p>
+              As a general technologist, I&apos;ve acquired an expansive body of
+              skills, experience, and knowledge of technologies,
+              methodologies, and problem domains. I&apos;ve delved deeply into the
+              unique problems of, and principle technologies behind:
+            </p>
+
             <ul>
-              <li>technical terms (e.g., Wikipedia)</li>
-              <li>project metadata</li>
-              <li>API documentation (e.g., Javadoc)</li>
+              <li>Systems support and infrastructure for software development and deployment</li>
+              <li>Digital Multimedia, graphic design and prepress</li>
+              <li>Network design, deployment, and operations (including network security)</li>
+              <li>Accounting (of assets, inventory, debts, transactions, and time)</li>
+              <li>Content- and Asset-management for web-based publication</li>
+              <li>Workflow and digital document management</li>
+              <li>Premises security (i.e., alarms, locks, etc.)</li>
             </ul>
-          </li>
-          <li>
-            Authored comprehensive roadmap and architecture document
-            for a next-generation backend built around ReST
-            principles, the Apache Xindice XML storage system, and
-            extensions to existing Python libraries written for
-            &ldquo;rich search&rdquo; population.
-          </li>
-        </ul>
-      </li>
-      <li class="project">
-        <a name="asti"><span class="client">Advanced Simulation Technology, Inc. (ASTi):</span></a>
-        <ul>
-          <li>
-            Created ABS (ASTi Build System,) a suite of build and
-            dependency management tools to manage builds of source
-            code and binary packages stored across Subversion, CVS,
-            FTP, and HTTP (to ease company's migration from CVS to
-            Subversion.)
-          </li>
-          <li>
-            Created comprehensive Python libraries to wrap basic
-            access to source control repositories in a uniform
-            mechanism. Libraries currently support trivial CVS and
-            Subversion operations, but are designed with complete
-            extensibility to other SCM platforms (e.g., Perforce) in
-            mind.
-          </li>
-          <li>
-            Created comprehensive Python libraries to manage Debian
-            packages, both at the source-tree level (i.e.,
-            debian/control, etc.) and at the binary package level
-            (wrappers around ar, etc., to allow scripted inspection,
-            creation, and modification of packages.
-          </li>
-        </ul>
-      </li>
-      <li class="project">
-        <a name="hfd"><span class="client">HFD:</span></a>
-        <ul>
-          <li>
-            Responsible for all system administration and
-            infrastructure architecture issues for in-house systems
-            and client-facing systems and hosted client applications.
-          </li>
-          <li>
-            Lead Architect for the <em>Monkey</em> content management
-            system, deployed at several large non-profit and
-            government organizations.
-          </li>
-          <li>
-            Lead Architect for all client technical solutions,
-            including online conference registration,
-            &ldquo;public&rdquo; submission to content management
-            tools, etc.
-          </li>
-        </ul>
-      </li>
-      <li class="project">
-        <a name="hcl"><span class="client">Hummingbird:</span></a>
-        <ul>
-          <li>
-            Worked on the internal J2EE server development team to
-            design and implement open-source automated testing tools
-            for J2EE server compliance.
-          </li>
-          <li>
-            Wrote <cite>Automated Test Catalog Management</cite>, a
-            paper outlining a system to ease the manual burden of
-            maintaining the test suite.
-          </li>
-        </ul>
-      </li>
-      <li class="project">
-        <a name="nethopper"><span class="client">Net-HOPPER: <em>(formerly LAN-hopper, acquired by Spirent Communications)</em></span></a>
-        <ul>
-          <li>
-            Researched and specified a PC/104+ based replacement for
-            an ISA passive-backplane based embedded Linux system.
-          </li>
-          <li>
-            Adapted <em>CASPER</em> toolset to provide a framework for
-            exercising the PC/104+ based system during FCC testing.
-          </li>
-          <li>
-            Worked on defining, designing, and implementing
-            <em>ALES</em>, the <em>Adiamante Linux Embedding
-            Suite</em>, a set of tools for embedding Linux.
-          </li>
-        </ul>
-      </li>
-      <li class="project">
-        <a name="corecomm"><span class="client">Core Communications:</span></a>
-        <ul>
-          <li>
-            Designed, implemented, deployed, and managed accounting
-            and disbursement software in support of Core&apos;s
-            third-party credit-card billing services for Internet
-            merchants.
-          </li>
-          <li>
-            Created a system to reliably handle commissions and other
-            internal accounting on $1.5 million per month gross
-            transaction volume.
-          </li>
-          <li>
-            Created reporting infrastructure to allow third-party
-            billing clients to retrieve accurate accounting of their
-            commissions, transactions, fees, etc.
-          </li>
-        </ul>
-      </li>
-      <li class="project">
-        <a name="jguru"><span class="client">jGuru:</span></a>
-        <ul>
-          <li>
-            Co-designed, deployed, and managed Linux systems
-            infrastructure behind jGuru.com, the company's 500K+
-            views/month Java developer community nexus.
-          </li>
-          <li>
-            Designed, explored preliminary architecture for
-            <em>C2</em>, an embedded Linux take on managing the
-            cluster of machines behind jGuru.com
-          </li>
-          <li>
-            Did extensive work with the CTO to help clean up the
-            development process based around Perforce SCM
-          </li>
-          <li>
-            Explored, established best practices for a
-            <em>&ldquo;pristine sources&rdquo;</em> SCM methodology,
-            to allow more fluid integration of third-party sources
-            into an in-house codebase.
-          </li>
-          <li>
-            Explored best practices for a Perforce-based approach to
-            system configuration management.
-          </li>
-          <li>
-            Worked on recoding and redesigning the <em>Perl
-            Prototype</em> library in Python, to support
-            prototype-based OOP in Python.
-          </li>
-        </ul>
-      </li>
-      <li class="project">
-        <a name="ietf-46"><span class="client">46th IETF Meeting - Terminal Room Team:</span></a>
-        <ul>
-          <li>
-            Managed printing, print servers for 2300+ attendees,
-            45000+ pages printed over the five-day meeting.
-          </li>
-          <li>
-            Installed, managed, and deployed ~100 workstations running
-            a mix of Linux and Win2k.
-          </li>
-          <li>
-            Wrote <em>CASPER</em> <em>(CASPER: Automated System to
-            Perform Enterprise Replication)</em>, a
-            <em>Ghost</em>-like tool to install hard drive images over
-            the network. <em>CASPER</em> was, effectively, my first
-            true Linux embedding project, since it ran off of a set of
-            Linux floppies for creating and retrieving disk images.
-          </li>
-        </ul>
-      </li>
-      <li class="project">
-        <a name="iwe"><span class="client">Innovative Workflow Engineering, Inc.: <em>(now VirPack.com)</em></span></a>
-        <ul>
-          <li>
-            Designed and implemented discrete event simulation engine
-            in Perl. No simulation engines existed adequate to our
-            purposes within our price range.
-          </li>
-          <li>
-            Designed and implemented a set of "hooks" into the Optika
-            <em>FPmulti</em> and <em>FPreport</em> document
-            imaging/COLD product to collect system statistics.
-          </li>
-          <li>
-            Chief Architect of the <em>eXtensible Workflow Package
-            Language (XWPL)</em>, an XML-based language to describe
-            packages of files and related data for workflow
-            interchange.
-          </li>
-        </ul>
-      </li>
-      <li class="project">
-        <a name="centralres"><span class="client">CentralReservations.COM: <em>(A Landmark Communications Company, now defunct)</em></span></a>
-        <ul>
-          <li>
-            Built one of the first and most extensive web-based
-            systems to offer online resort property rental with
-            realtime availability information.
-          </li>
-          <li>
-            Designed and built Linux-based gateway machines to serve
-            as 24x7 access to DOS-based reservations software at
-            individual property-managers.
-          </li>
-          <li>
-            In support of the dynamic nature of the website,
-            implemented a Perl module to support Prototype-based
-            OOP. The library made extensive use of Perl grey-magic
-            (AUTOLOAD, closures, subroutine references, parameters as
-            a list, etc.)
-          </li>
-        </ul>
-      </li>
-      <li class="project">
-        <a name="rhs"><span class="client">Red Hat Software:</span></a>
-        <ul>
-          <li>
-            In early 1997, part of a three-person team that built a
-            Java/CORBA based order and inventory management system to
-            replace their existing Mac-based product. Worked with
-            bleeding edge Linux Java implementation and Early Access
-            Java CORBA tools.
-          </li>
-          <li>
-            Personally built a Java/CORBA middleware system to wrap
-            all access to persistent storage. A preprocessor expanded
-            extension keywords to the Java language to build
-            infrastructure for persistent and distributed objects.
-          </li>
-        </ul>
-      </li>
-      <li class="project">
-        <a name="wwsi"><span class="client">Worldwide Solutions, Inc.:</span></a>
-        <ul>
-          <li>
-            Developed corporate identity for WWSI, including logo,
-            business cards, letterhead, etc.
-          </li>
-          <li>
-            During the course of work with WWSI, built networks for
-            several tradeshows:
+
+            <p>
+              Since my start in the industry in 1989, I&apos;ve dedicated myself to
+              understanding problem domains, technologies, and the human
+              factors issues that bridge those two worlds. In the intervening
+              decade and a half of work, I&apos;ve acquired a unique and thorough
+              blend of experiences with systems, solutions, and the business
+              problems to which the they apply.
+            </p>
+          </section>
+
+          <section id="functional-summary" class="nav-target" style="padding-top: 192px; margin-top: -192px">
+            <h2>Functional Summary</h2>
+            <p>
+              I&apos;ve been a software developer, systems and infrastructure
+              architect, and general technologist, de facto human factors
+              consultant, graphic designer, and support technician. I
+              understand technology from the lowest levels to the highest, and
+              am comfortable operating at any and all of those levels.
+            </p>
+
+            <p>
+              I have exceptional talents for:
+            </p>
+
             <ul>
-              <li>JavaOne <em>(1996)</em></li>
-              <li>Microsoft SiteBuilder <em>(1996)</em></li>
-              <li>EMA (Electronic Messaging Association) <em>(1996)</em></li>
-              <li>Netscape Developer's Conference <em>(1996)</em></li>
-              <li>Informix Worldwide Users' Conference <em>(1997)</em></li>
+              <li>Analysis, pattern discovery, and synthesis</li>
+              <li>System architecture</li>
+              <li>Human and computer language (especially metaphor and analogy)</li>
             </ul>
-          </li>
-        </ul>
-      </li>
-      <li class="project">
-        <a name="lanhopper"><span class="client">LAN-hopper Systems, Inc.: <em>(acquired by Spirent Communications)</em></span></a>
-        <ul>
-          <li>
-            Built first web interface for PATHmaster
-            software. Involved intricate maintenance of session state
-            before cookies were pervasive.
-          </li>
-        </ul>
-      </li>
-      <li class="project">
-        <a name="interop"><span class="client">Networld+Interop InteropNet NOC Team Member:</span></a>
-        <ul>
-          <li>
-            Designed and implemented <em>KATHMANDU</em>, a system to
-            manage the InteropNet address space (45/8). Roughly 50kLOC of
-            Perl.
-          </li>
-          <li>
-            As part of <em>KATHMANDU</em>, developed
-            visualization tools to show relationships among addressing
-            entities on the network, including technology
-            relationships and financial / business relationships
-            (e.g., maps between booths and equipment
-            &ldquo;peds&rdquo;, etc.)
-          </li>
-          <li>
-            Pioneered <em>Network Information Management</em>
-            <em>(NIM)</em> technology for collecting disparate
-            information about networks in a central system.
-          </li>
-          <li>
-            In support of <em>KATHMANDU</em> work,
-            refined the Perl Prototype library, and added an implicit
-            persistence framework. Made prototype objects
-            semi-transparently persistent against an RDBMS backend.
-          </li>
-          <li>
-            Over five years, rose in responsibilities on the team
-            doing trouble-shooting and management of a 24x7,
-            short-term, high-volume tradeshow network. TCP/IP,
-            Ethernet/Fast Ethernet, etc. The largest, non-military,
-            mobile network in the world.
-          </li>
-        </ul>
-      </li>
-      <li class="project">
-        <a name="litton"><span class="client">Litton Poly-Scientific:</span></a>
-        <ul>
-          <li>
-            Designed and implemented low-level driver and
-            communications / database library for PC based
-            configuration of PointGuard Access Control and Alarm
-            panels (based on Echelon LonWorks technology). This
-            backend library was the basis for a colleague's Windows
-            UI.
-          </li>
-          <li>
-            Designed and implemented UI for PC based configuration of
-            the RCC/DDC series of alarm panels (MC68k-based embedded
-            systems). This involved building a C++ database engine to
-            run out of ROM on the 68k board. That means I know what an
-            <em>&ldquo;in-place new&rdquo;</em> is.
-          </li>
-          <li>
-            Designed and built GPIB and embedded-systems based
-            automated test equipment for components in the Longbow
-            targeting system on the Apache helicopter. Discovered,
-            analysed, and solved discrepancies in the timing
-            assumptions made by the original designs. This project
-            involved hardware design (around the Motorola 68HC11 8-bit
-            microcontroller and the North Atlantic Angle Position
-            Indicator), MC68HC11 assembler, a C++ OLE Automation
-            object to manipulate the GPIB and HC11 based systems, and
-            a radically forward VB UI.
-          </li>
-          <li>
-            Designed and implemented a Java <em>(Swing)</em> UI and
-            test &ldquo;harness&rdquo; for automated test
-            equipment. Included Jython for scriptability.
-          </li>
-        </ul>
-      </li>
-      <li class="project">
-        <a name="vtmmlab"><span class="client">The MultiMedia Lab at Virginia Tech:</span></a>
-        <ul>
-          <li>
-            Produced multimedia presentation to accompany <a
-            href="http://www.gatech.edu/president/">Dr. G. Wayne
-            Clough&apos;s</a> Martin S. Kapp lecture on finite element
-            analysis of soil in civil engineering projects.
-          </li>
-          <li>
-            Worked closely with Virginia Tech faculty to produce
-            multimedia presentations and visualizations for classroom
-            and professional use.
-          </li>
-          <li>
-            Developed infrastructure and software to support
-            multimedia content creation and management.
-          </li>
-        </ul>
-      </li>
-    </ul>
+
+            <p>
+              I have specific skills in, and passions for:
+            </p>
+
+            <ul>
+              <li>Infrastructure software (i.e., software in support of other technological ends)</li>
+              <li>Visual design and layout, in both traditional and electronic media</li>
+              <li>Data mining, especially scrubbing and cleansing</li>
+              <li>System reverse engineering (hardware, software, protocol, and data formats)</li>
+              <li>Network architecture and management software (i.e., the writing of), protocol analysis, implementation, etc.</li>
+              <li>Software frameworks (i.e., rationalizing code into libraries, toolsets, etc.)</li>
+              <li>Bridging technology gaps (e.g., inter-language integration)</li>
+            </ul>
+          </section>
+
+          <section id="programming-skills" class="nav-target" style="padding-top: 192px; margin-top: -192px">
+            <h2>Programming Skills</h2>
+
+            <section class="skillgroup">
+              <h3>Programming Languages</h3>
+              <p class="groupdesc">
+                I've programmed in a variety of languages, on projects
+                ranging from exploratory toys to enterprise software
+                to embedded product firmware. Here's an arbitrary list:
+              </p>
+
+              <ul class="group">
+                <li>Python</li>
+                <li>bash</li>
+                <li>JavaScript, CoffeeScript</li>
+                <li>Perl</li>
+                <li>MC68HC11 Assembly</li>
+                <li>C++</li>
+                <li>C</li>
+                <li>Emacs Lisp</li>
+
+              </ul>
+
+              <p class="groupdesc">
+                Here are some with which I don't have enough
+                experience to call them "skills", but I know I want to
+                do more with them (or their relatives):
+              </p>
+
+              <ul class="group">
+                <li>Prolog</li>
+                <li>Common Lisp / CLOS</li>
+                <li>Clojure</li>
+                <li>Erlang</li>
+              </ul>
+
+              <p class="groupdesc">
+                Here are some I've used, but would prefer not to in
+                the future (except to port systems away from them):
+              </p>
+
+              <ul class="group">
+                <li>PHP</li>
+                <li>Java (the language, not the platform)</li>
+                <li>Visual Basic</li>
+              </ul>
+
+            </section>
+
+
+            <section class="skillgroup">
+              <h3>Other Languages</h3>
+              <p class="groupdesc">
+                These are purpose-specific languages which, even when
+                <em>Turing-complete</em>, are narrow in their scope. I group
+                these (roughly) by type and purpose, but the groups are
+                otherwise unordered.
+              </p>
+
+              <ul class="group">
+                <li><strong>Generalized Markup and serialization:</strong> SGML, XML, YAML, JSON</li>
+                <li><strong>Stylesheets and Layout:</strong> PostScript, CSS/LessCSS, XSLT + XSL-FO</li>
+                <li><strong>Hypertext Markup and Layout:</strong> HTML, XHTML</li>
+                <li><strong>Document Markup:</strong> L<sup>A</sup>T<sub>E</sub>X, Markdown, ReStructured Text (reST), POD (perldoc)</li>
+                <li><strong>Text Search:</strong> Regular Expressions <em>(POSIX, Perl, Python, and other extended forms)</em></li>
+                <li><strong>Object Schema:</strong> CORBA IDL, XML Schema, Relax NG</li>
+                <li><strong>Database Schema and Querying:</strong> SQL</li>
+              </ul>
+            </section>
+          </section>
+
+          <section id="technology-skills" class="nav-target" style="padding-top: 192px; margin-top: -192px">
+            <h2>Technology Skills</h2>
+
+            <section class="skillgroup">
+              <h3>Software Environment and Infrastructure Technologies</h3>
+              <p class="groupdesc">
+                Here I include technologies I view as a part of the deployment
+                &ldquo;environment&rdquo; in which software runs, including the
+                infrastructure upon which the software is based. I group these
+                by technology family, and within each group, list its members
+                in chronological order of my initial exposure to them.
+              </p>
+              <ul class="group">
+                <li><strong>IPC/RPC:</strong> Sockets, DCE-RPC, COM/DCOM, CORBA IIOP, Java RMI, XML-RPC, REST</li>
+                <li><strong>Filesharing:</strong> SMB/CIFS, NFS, WebDAV <em>(at the protocol level)</em></li>
+                <li><strong>Data Persistence:</strong> Flat-file, RDBMS, Semantic Net, BTrieve/DBM, OO, ORDBMS, XML</li>
+                <li><strong>UI:</strong> CLI, Text-mode windowing, GUI, Web forms, Web-based DHTML+JavaScript, Flash</li>
+              </ul>
+            </section>
+
+            <section class="skillgroup">
+              <h3>Software Development Infrastructure Technologies</h3>
+              <p class="groupdesc">
+                Here I include the technologies I view as a part of the process
+                of building software. This includes specific compiler suites,
+                toolchains, etc. This list is not exhaustive, but indicative. I
+                group these by tool family, and within each group, list its
+                members by my rating of their worth in solving the problem
+                (greatest to least.)
+              </p>
+              <ul class="group">
+                <li><strong>Source Management:</strong> Perforce SCM, Subversion, CVS, RCS</li>
+                <li><strong>Dependancy Management:</strong> GNU Make, MS nmake</li>
+                <li><strong>Compilation/Toolchain:</strong> GCC+GNU toolchain, Borland C/C++, MS Visual C/C++</li>
+                <li><strong>Parsing/Lexing:</strong> ANTLR, PCCTS, Flex+Bison, Lex+YACC</li>
+              </ul>
+            </section>
+
+            <section class="skillgroup">
+              <h3>Operating Systems / Platforms</h3>
+              <p class="groupdesc">
+                Here I include the hardware and software platforms on which
+                everything runs, including &ldquo;virtual&rdquo; platforms
+                implemented on top of other environments.
+              </p>
+              <ul class="group">
+                <li><strong>Hardware Platforms:</strong> Intel-based PC (from 8086 ISA through current technology, including PC104(+)), Motorola 68k-based Macintosh, PowerPC-based Macintosh, Sun SPARC-based workstations (5, 20, Ultra), Palm, Sony Cli&eacute;, custom embedded platforms</li>
+                <li><strong>Operating Systems:</strong> MS-DOS, Microsoft Windows (3.x, 95/8, NT/2000, XP), Linux (Red Hat, Mandrake, Gentoo, LNX-BBC, LFS, Hand-built embedded), NetBSD, Solaris, Mac OS (pre-OS X and OS X), BeOS</li>
+                <li><strong>Virtual Environments:</strong> Cygwin, Java Virtual Machine <em>(at the bytecode level)</em>, VMWare</li>
+                <li><strong>Networking Technologies:</strong> IP (TCP+UDP), DNS, DHCP, RADIUS, NTP, LDAP &amp; A/D, Infoblox NIOS, 10/100/1000 Ethernet, cable plants (Cat3/5, termination), Fluke One-Touch, Fluke LANmeter, PathMaster, Net-Hopper switches, layer 0-8 troubleshooting and diagnosis (0: financial, 8: political), routing, switching, firewalls (ipchains/iptables/shorewall), NAT, IPSec, SSH, SSL, Ethereal (etc.)</li>
+              </ul>
+            </section>
+
+            <section class="skillgroup">
+              <h3>General Productivity Applications and Technologies</h3>
+              <p class="groupdesc">
+                It ought to go without saying that, as a seasoned software
+                developer, I know my way around just about any piece of software
+                into which I come into contact. However, every package has its
+                idiosyncrasies, so it&apos;s important to know just which ones I use
+                regularly enough to call myself &ldquo;skilled&rdquo; in them.
+              </p>
+              <ul class="group">
+                <li><strong>Office Suites:</strong> Microsoft Office (through 2003, including XML), WordPerfect Office (through 10), StarOffice / OpenOffice 2.x (including XML)</li>
+                <li><strong>Graphics / Multimedia Tools:</strong> Adobe Photoshop, The GIMP, CorelDraw!, PageMaker, Macromedia StudioMX (Flash, Fireworks, Freehand, Dreamweaver), AutoCAD <em>(including programmatic control via ActiveX and AutoLISP)</em></li>
+                <li><strong>Financial Suites:</strong> GNUCash, Quickbooks, Quicken, Microsoft Money Small Business</li>
+              </ul>
+            </section>
+          </section>
+
+          <section id="projects" class="nav-target" style="padding-top: 192px; margin-top: -192px">
+            <h2>Significant Projects and Responsibilities</h2>
+
+            <section class="project">
+              <h3 id="xiocom" class="client">Xiocom Wireless:</h3>
+              <ul>
+                <li>
+                  Designed and built XOS, an OpenWrt-based embedded
+                  Linux on an IXP4xx platform, for large-scale
+                  wireless networks.
+                </li>
+                <li>
+                  Designed and developed a single-file XOS image,
+                  featuring the easy field upgrade process of an
+                  enterprise-grade router (i.e., copy a single file,
+                  select it, reboot.)
+                </li>
+                <li>
+                  Designed a JSON config schema, easily digested by
+                  tools, with direct translation into UI. Design goal
+                  was conceptual integrity of the schema and user
+                  experience. Built an extensible, retargetable
+                  expansion of the configuration into the underlying
+                  platform's format.
+                </li>
+                <li>
+                  Maintained an inherited, legacy, Linux for the
+                  Soekris x86 platform through transition to XOS on
+                  new hardware. Contributed to maintenance of an
+                  inherited captive-portal and billing system during
+                  the transition.
+                </li>
+                <li>
+                  Designed, built, and deployed tools for safe remote
+                  update of legacy platform code and configuration.
+                </li>
+                <li>
+                  Lead a team of four junior developers, mentoring on
+                  debugging technique and comprehension of complex,
+                  cross-platform systems.
+                </li>
+              </ul>
+            </section>
+
+            <section class="project">
+              <h3 id="infoblox" class="client">Infoblox, Inc.:</h3>
+              <ul>
+                <li>
+                  Worked with customers to develop architecture for DNS,
+                  DHCP, and other core network services around the Infoblox
+                  platform.
+                </li>
+                <li>
+                  Performed customer deployment and data migration as part
+                  of the Professional Services group.
+                </li>
+                <li>
+                  Designed and developed customized operator user interfaces
+                  around the platform API.
+                </li>
+                <li>
+                  Designed customized operator user interfaces,
+                  providing high-level abstractions and services on
+                  top of the core platform API.
+                </li>
+              </ul>
+            </section>
+
+            <section class="project">
+              <h3 id="krugle" class="client">Krugle, Inc.:</h3>
+              <ul>
+                <li>
+                  Responsible for initial population of the &ldquo;rich
+                  search&rdquo; data set, including scraping and normalizing
+                  ill-formed data sources, canonicalizing data from multiple
+                  sources, and resolving multiple sources to produce a
+                  single, comprehensive view of the data.
+                </li>
+                <li>
+                  Wrote scraping and crawling code for:
+                  <ul>
+                    <li>Wikipedia (MediaWiki markup)</li>
+                    <li>
+                      Open-source project metadata:
+                      <ul>
+                        <li>SourceForge (using FLOSSmole data)</li>
+                        <li>Freshmeat</li>
+                        <li>Apache Project</li>
+                        <li>DOAP <em>(Description Of A Project)</em></li>
+                      </ul>
+                    </li>
+                    <li>Javadoc <em>(from HTML)</em></li>
+                  </ul>
+                </li>
+                <li>
+                  Created extensible, canonical internal XML markup
+                  standards for three major datatypes:
+                  <ul>
+                    <li>technical terms (e.g., Wikipedia)</li>
+                    <li>project metadata</li>
+                    <li>API documentation (e.g., Javadoc)</li>
+                  </ul>
+                </li>
+                <li>
+                  Authored comprehensive roadmap and architecture document
+                  for a next-generation backend built around ReST
+                  principles, the Apache Xindice XML storage system, and
+                  extensions to existing Python libraries written for
+                  &ldquo;rich search&rdquo; population.
+                </li>
+              </ul>
+            </section>
+
+            <section class="project">
+              <h3 id="asti" class="client">Advanced Simulation Technology, Inc. (ASTi):</h3>
+              <ul>
+                <li>
+                  Created ABS (ASTi Build System,) a suite of build and
+                  dependency management tools to manage builds of source
+                  code and binary packages stored across Subversion, CVS,
+                  FTP, and HTTP (to ease company's migration from CVS to
+                  Subversion.)
+                </li>
+                <li>
+                  Created comprehensive Python libraries to wrap basic
+                  access to source control repositories in a uniform
+                  mechanism. Libraries currently support trivial CVS and
+                  Subversion operations, but are designed with complete
+                  extensibility to other SCM platforms (e.g., Perforce) in
+                  mind.
+                </li>
+                <li>
+                  Created comprehensive Python libraries to manage Debian
+                  packages, both at the source-tree level (i.e.,
+                  debian/control, etc.) and at the binary package level
+                  (wrappers around ar, etc., to allow scripted inspection,
+                  creation, and modification of packages.
+                </li>
+              </ul>
+            </section>
+
+            <section class="project">
+              <h3 id="hfd" class="client">HFD:</h3>
+              <ul>
+                <li>
+                  Responsible for all system administration and
+                  infrastructure architecture issues for in-house systems
+                  and client-facing systems and hosted client applications.
+                </li>
+                <li>
+                  Lead Architect for the <em>Monkey</em> content management
+                  system, deployed at several large non-profit and
+                  government organizations.
+                </li>
+                <li>
+                  Lead Architect for all client technical solutions,
+                  including online conference registration,
+                  &ldquo;public&rdquo; submission to content management
+                  tools, etc.
+                </li>
+              </ul>
+            </section>
+
+            <section class="project">
+              <h3 id="hcl" class="client">Hummingbird:</h3>
+              <ul>
+                <li>
+                  Worked on the internal J2EE server development team to
+                  design and implement open-source automated testing tools
+                  for J2EE server compliance.
+                </li>
+                <li>
+                  Wrote <cite>Automated Test Catalog Management</cite>, a
+                  paper outlining a system to ease the manual burden of
+                  maintaining the test suite.
+                </li>
+              </ul>
+            </section>
+
+            <section class="project">
+              <h3 id="nethopper" class="client">Net-HOPPER: <em>(formerly LAN-hopper, acquired by Spirent Communications)</em></h3>
+              <ul>
+                <li>
+                  Researched and specified a PC/104+ based replacement for
+                  an ISA passive-backplane based embedded Linux system.
+                </li>
+                <li>
+                  Adapted <em>CASPER</em> toolset to provide a framework for
+                  exercising the PC/104+ based system during FCC testing.
+                </li>
+                <li>
+                  Worked on defining, designing, and implementing
+                  <em>ALES</em>, the <em>Adiamante Linux Embedding
+                    Suite</em>, a set of tools for embedding Linux.
+                </li>
+              </ul>
+            </section>
+
+            <section class="project">
+              <h3 id="corecomm" class="client">Core Communications:</h3>
+              <ul>
+                <li>
+                  Designed, implemented, deployed, and managed accounting
+                  and disbursement software in support of Core&apos;s
+                  third-party credit-card billing services for Internet
+                  merchants.
+                </li>
+                <li>
+                  Created a system to reliably handle commissions and other
+                  internal accounting on $1.5 million per month gross
+                  transaction volume.
+                </li>
+                <li>
+                  Created reporting infrastructure to allow third-party
+                  billing clients to retrieve accurate accounting of their
+                  commissions, transactions, fees, etc.
+                </li>
+              </ul>
+            </section>
+
+            <section class="project">
+              <h3 id="jguru" class="client">jGuru:</h3>
+              <ul>
+                <li>
+                  Co-designed, deployed, and managed Linux systems
+                  infrastructure behind jGuru.com, the company's 500K+
+                  views/month Java developer community nexus.
+                </li>
+                <li>
+                  Designed, explored preliminary architecture for
+                  <em>C2</em>, an embedded Linux take on managing the
+                  cluster of machines behind jGuru.com
+                </li>
+                <li>
+                  Did extensive work with the CTO to help clean up the
+                  development process based around Perforce SCM
+                </li>
+                <li>
+                  Explored, established best practices for a
+                  <em>&ldquo;pristine sources&rdquo;</em> SCM methodology,
+                  to allow more fluid integration of third-party sources
+                  into an in-house codebase.
+                </li>
+                <li>
+                  Explored best practices for a Perforce-based approach to
+                  system configuration management.
+                </li>
+                <li>
+                  Worked on recoding and redesigning the <em>Perl
+                    Prototype</em> library in Python, to support
+                  prototype-based OOP in Python.
+                </li>
+              </ul>
+            </section>
+
+            <section class="project">
+              <h3 id="ietf-46" class="client">46th IETF Meeting - Terminal Room Team:</h3>
+              <ul>
+                <li>
+                  Managed printing, print servers for 2300+ attendees,
+                  45000+ pages printed over the five-day meeting.
+                </li>
+                <li>
+                  Installed, managed, and deployed ~100 workstations running
+                  a mix of Linux and Win2k.
+                </li>
+                <li>
+                  Wrote <em>CASPER</em> <em>(CASPER: Automated System to
+                    Perform Enterprise Replication)</em>, a
+                  <em>Ghost</em>-like tool to install hard drive images over
+                  the network. <em>CASPER</em> was, effectively, my first
+                  true Linux embedding project, since it ran off of a set of
+                  Linux floppies for creating and retrieving disk images.
+                </li>
+              </ul>
+            </section>
+
+            <section class="project">
+              <h3 id="iwe" class="client">Innovative Workflow Engineering, Inc.: <em>(now VirPack.com)</em></h3>
+              <ul>
+                <li>
+                  Designed and implemented discrete event simulation engine
+                  in Perl. No simulation engines existed adequate to our
+                  purposes within our price range.
+                </li>
+                <li>
+                  Designed and implemented a set of "hooks" into the Optika
+                  <em>FPmulti</em> and <em>FPreport</em> document
+                  imaging/COLD product to collect system statistics.
+                </li>
+                <li>
+                  Chief Architect of the <em>eXtensible Workflow Package
+                    Language (XWPL)</em>, an XML-based language to describe
+                  packages of files and related data for workflow
+                  interchange.
+                </li>
+              </ul>
+            </section>
+
+            <section class="project">
+              <h3 id="centralres" class="client">CentralReservations.COM: <em>(A Landmark Communications Company, now defunct)</em></h3>
+              <ul>
+                <li>
+                  Built one of the first and most extensive web-based
+                  systems to offer online resort property rental with
+                  realtime availability information.
+                </li>
+                <li>
+                  Designed and built Linux-based gateway machines to serve
+                  as 24x7 access to DOS-based reservations software at
+                  individual property-managers.
+                </li>
+                <li>
+                  In support of the dynamic nature of the website,
+                  implemented a Perl module to support Prototype-based
+                  OOP. The library made extensive use of Perl grey-magic
+                  (AUTOLOAD, closures, subroutine references, parameters as
+                  a list, etc.)
+                </li>
+              </ul>
+            </section>
+
+            <section class="project">
+              <h3 id="rhs" class="client">Red Hat Software:</h3>
+              <ul>
+                <li>
+                  In early 1997, part of a three-person team that built a
+                  Java/CORBA based order and inventory management system to
+                  replace their existing Mac-based product. Worked with
+                  bleeding edge Linux Java implementation and Early Access
+                  Java CORBA tools.
+                </li>
+                <li>
+                  Personally built a Java/CORBA middleware system to wrap
+                  all access to persistent storage. A preprocessor expanded
+                  extension keywords to the Java language to build
+                  infrastructure for persistent and distributed objects.
+                </li>
+              </ul>
+            </section>
+
+            <section class="project">
+              <h3 id="wwsi" class="client">Worldwide Solutions, Inc.:</h3>
+              <ul>
+                <li>
+                  Developed corporate identity for WWSI, including logo,
+                  business cards, letterhead, etc.
+                </li>
+                <li>
+                  During the course of work with WWSI, built networks for
+                  several tradeshows:
+                  <ul>
+                    <li>JavaOne <em>(1996)</em></li>
+                    <li>Microsoft SiteBuilder <em>(1996)</em></li>
+                    <li>EMA (Electronic Messaging Association) <em>(1996)</em></li>
+                    <li>Netscape Developer's Conference <em>(1996)</em></li>
+                    <li>Informix Worldwide Users' Conference <em>(1997)</em></li>
+                  </ul>
+                </li>
+              </ul>
+            </section>
+
+            <section class="project">
+              <h3 id="lanhopper" class="client">LAN-hopper Systems, Inc.: <em>(acquired by Spirent Communications)</em></h3>
+              <ul>
+                <li>
+                  Built first web interface for PATHmaster
+                  software. Involved intricate maintenance of session state
+                  before cookies were pervasive.
+                </li>
+              </ul>
+            </section>
+
+            <section class="project">
+              <h3 id="interop" class="client">Networld+Interop InteropNet NOC Team Member:</h3>
+              <ul>
+                <li>
+                  Designed and implemented <em>KATHMANDU</em>, a system to
+                  manage the InteropNet address space (45/8). Roughly 50kLOC of
+                  Perl.
+                </li>
+                <li>
+                  As part of <em>KATHMANDU</em>, developed
+                  visualization tools to show relationships among addressing
+                  entities on the network, including technology
+                  relationships and financial / business relationships
+                  (e.g., maps between booths and equipment
+                  &ldquo;peds&rdquo;, etc.)
+                </li>
+                <li>
+                  Pioneered <em>Network Information Management</em>
+                  <em>(NIM)</em> technology for collecting disparate
+                  information about networks in a central system.
+                </li>
+                <li>
+                  In support of <em>KATHMANDU</em> work,
+                  refined the Perl Prototype library, and added an implicit
+                  persistence framework. Made prototype objects
+                  semi-transparently persistent against an RDBMS backend.
+                </li>
+                <li>
+                  Over five years, rose in responsibilities on the team
+                  doing trouble-shooting and management of a 24x7,
+                  short-term, high-volume tradeshow network. TCP/IP,
+                  Ethernet/Fast Ethernet, etc. The largest, non-military,
+                  mobile network in the world.
+                </li>
+              </ul>
+            </section>
+
+            <section class="project">
+              <h3 id="litton" class="client">Litton Poly-Scientific:</h3>
+              <ul>
+                <li>
+                  Designed and implemented low-level driver and
+                  communications / database library for PC based
+                  configuration of PointGuard Access Control and Alarm
+                  panels (based on Echelon LonWorks technology). This
+                  backend library was the basis for a colleague's Windows
+                  UI.
+                </li>
+                <li>
+                  Designed and implemented UI for PC based configuration of
+                  the RCC/DDC series of alarm panels (MC68k-based embedded
+                  systems). This involved building a C++ database engine to
+                  run out of ROM on the 68k board. That means I know what an
+                  <em>&ldquo;in-place new&rdquo;</em> is.
+                </li>
+                <li>
+                  Designed and built GPIB and embedded-systems based
+                  automated test equipment for components in the Longbow
+                  targeting system on the Apache helicopter. Discovered,
+                  analysed, and solved discrepancies in the timing
+                  assumptions made by the original designs. This project
+                  involved hardware design (around the Motorola 68HC11 8-bit
+                  microcontroller and the North Atlantic Angle Position
+                  Indicator), MC68HC11 assembler, a C++ OLE Automation
+                  object to manipulate the GPIB and HC11 based systems, and
+                  a radically forward VB UI.
+                </li>
+                <li>
+                  Designed and implemented a Java <em>(Swing)</em> UI and
+                  test &ldquo;harness&rdquo; for automated test
+                  equipment. Included Jython for scriptability.
+                </li>
+              </ul>
+            </section>
+
+            <section class="project">
+              <h3 id="vtmmlab" class="client">The MultiMedia Lab at Virginia Tech:</h3>
+              <ul>
+                <li>
+                  Produced multimedia presentation to accompany <a
+                                                                   href="http://www.gatech.edu/president/">Dr. G. Wayne
+                    Clough&apos;s</a> Martin S. Kapp lecture on finite element
+                  analysis of soil in civil engineering projects.
+                </li>
+                <li>
+                  Worked closely with Virginia Tech faculty to produce
+                  multimedia presentations and visualizations for classroom
+                  and professional use.
+                </li>
+                <li>
+                  Developed infrastructure and software to support
+                  multimedia content creation and management.
+                </li>
+              </ul>
+            </section>
+          </section>
+        </div>
+      </div> <!-- /row-fluid -->
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+
+    <script src="resume.js"></script>
   </body>
 </html>
