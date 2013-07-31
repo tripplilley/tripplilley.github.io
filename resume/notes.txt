@@ -1,0 +1,16 @@
+Expertise Levels (borrowed from an Amazon job posting):
+----------------------------------------------------------------------
+Expert
+Proficient
+Capable
+Familiar
+
+h2. Strengths
+
+From my "Clifton StrengthsFinder 2.0":http://strengths.gallup.com/110440/About-StrengthsFinder-20.aspx profile, my top five strengths are:
+
+# Strategic
+# Relator
+# Learner
+# Ideation
+# Command
