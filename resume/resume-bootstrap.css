@@ -113,6 +113,19 @@
   text-decoration: none;
 }
 
+#header-contact .links {
+  font-size: 12px;
+}
+
+#header-contact .links a {
+  color: #ffe6ef;
+}
+
+#header-contact .links u {
+  font-weight: 300;
+  text-decoration: none;
+}
+
 #content {
   padding: 192px 2.564102564102564% 30px 2.564102564102564%; /* to float below the header */
 }

@@ -33,27 +33,37 @@
             tripp lilley
           </div>
           <address id="header-contact" class="offset8 span3 pull-right">
-            3440 Vaidens Ct.<br>
-            Lanexa, VA 23089 (USA)<br>
-            <span class="phone">+1 540 585 4298</span><br>
             <span class="email">tripplilley<u>@</u>gmail.com</span><br>
+            3440 Vaidens Ct. • Lanexa, VA 23089 (USA)<br>
+            <span class="phone">+1 540 585 4298</span><br>
+            <span class="links">
+              <a href="https://github.com/tripplilley">github</a>
+              <u>|</u>
+              <a href="http://stackoverflow.com/users/309233/tripp-lilley">stack overflow</a>
+              <u>|</u>
+              <a href="http://linkedin.com/in/tripplilley">linkedin</a>
+            </span>
           </address>
         </div>
       </div>
       <div class="shadow-bottom">&nbsp;</div>
     </header>
+
     <div id="content" class="container-fluid">
       <div id="content-body" class="row-fluid">
-        <nav id="section-nav" class="span2 well affix">
-          <ul class="nav nav-pills nav-stacked">
-            <li><a href="#objective">Objective</a></li>
-            <li><a href="#career-summary">Career Summary</a></li>
-            <li><a href="#functional-summary">Functional Summary</a></li>
-            <li><a href="#programming-skills">Programming Skills</a></li>
-            <li><a href="#technology-skills">Technology Skills</a></li>
-            <li><a href="#projects">Significant Projects</a></li>
-          </ul>
-        </nav>
+
+        <div id="leftside" class="span2 affix">
+          <nav id="section-nav" class="well">
+            <ul class="nav nav-pills nav-stacked">
+              <li><a href="#objective">Objective</a></li>
+              <li><a href="#career-summary">Career Summary</a></li>
+              <li><a href="#functional-summary">Functional Summary</a></li>
+              <li><a href="#programming-skills">Programming Skills</a></li>
+              <li><a href="#technology-skills">Technology Skills</a></li>
+              <li><a href="#projects">Significant Projects</a></li>
+            </ul>
+          </nav>
+        </div><!-- leftside -->
 
         <!-- <aside id="skillcloud" class="well offset9 span2 pull-right affix"> -->
         <!--   <ul/> -->
@@ -110,7 +120,7 @@
               factors issues that bridge those two worlds. In the intervening
               decade and a half of work, I&apos;ve acquired a unique and thorough
               blend of experiences with systems, solutions, and the business
-              problems to which the solutions apply.
+              problems to which the they apply.
             </p>
           </section>
 
@@ -141,7 +151,9 @@
             <ul>
               <li>Infrastructure software (i.e., software in support of other technological ends)</li>
               <li>Visual design and layout, in both traditional and electronic media</li>
-              <li>Data mining, especially scrubbing and cleansing, and reverse-engineering</li>
+              <li>Data mining, especially scrubbing and cleansing</li>
+              <li>System reverse engineering (hardware, software, protocol, and data formats)</li>
+              <li>Network architecture and management software (i.e., the writing of), protocol analysis, implementation, etc.</li>
               <li>Software frameworks (i.e., rationalizing code into libraries, toolsets, etc.)</li>
               <li>Bridging technology gaps (e.g., inter-language integration)</li>
             </ul>
@@ -153,51 +165,47 @@
             <section class="skillgroup">
               <h3>Programming Languages</h3>
               <p class="groupdesc">
-                I list these in three groups. In the first group are those
-                languages in which I have achieved mastery and worked
-                &ldquo;deep black magic.&rdquo; I list them in reverse
-                chronological order of my initial experience with them (which
-                roughly approximates the order of my mastery and adoption of
-                each of them as my language of choice, although in several cases
-                there is significant overlap.)
+                I've programmed in a variety of languages, on projects
+                ranging from exploratory toys to enterprise software
+                to embedded product firmware. Here's an arbitrary list:
               </p>
 
               <ul class="group">
                 <li>Python</li>
-                <li>JavaScript <em>(with emphasis on prototype-based OOP features)</em></li>
+                <li>bash</li>
+                <li>JavaScript, CoffeeScript</li>
                 <li>Perl</li>
-                <li>Java</li>
                 <li>MC68HC11 Assembly</li>
-                <li>Visual Basic</li>
                 <li>C++</li>
                 <li>C</li>
+                <li>Emacs Lisp</li>
+
               </ul>
 
               <p class="groupdesc">
-                In the second group are those languages with which I have
-                achieved familiarity and the ability to accomplish functional
-                work, but have not had occasion or specific reason to explore in
-                more depth. I list these in reverse order of my skill level with
-                them (greatest to least.)
+                Here are some with which I don't have enough
+                experience to call them "skills", but I know I want to
+                do more with them (or their relatives):
               </p>
 
               <ul class="group">
-                <li>Jython <em>(Python implemented in Java)</em></li>
-                <li>Emacs LISP / LISP / AutoLISP</li>
+                <li>Prolog</li>
+                <li>Common Lisp / CLOS</li>
+                <li>Clojure</li>
+                <li>Erlang</li>
               </ul>
 
               <p class="groupdesc">
-                In the third group are those languages with which I have a
-                conceptual familiarity and have written &ldquo;toy&rdquo;
-                programs to exercise concepts, but have not written significant
-                code, or even short, task-specific programs. I group these
-                (roughly) by language type:
+                Here are some I've used, but would prefer not to in
+                the future (except to port systems away from them):
               </p>
 
               <ul class="group">
-                <li>Self, CLOS, Prolog</li>
-                <li>Z80 Assembly <em>(have reverse-engineered from machine code)</em></li>
+                <li>PHP</li>
+                <li>Java (the language, not the platform)</li>
+                <li>Visual Basic</li>
               </ul>
+
             </section>
 
 
@@ -211,10 +219,10 @@
               </p>
 
               <ul class="group">
-                <li><strong>Generalized Markup:</strong> SGML, XML, YAML</li>
-                <li><strong>Stylesheets and Layout:</strong> PostScript , CSS1, CSS2+Positioning, XSLT + XSL-FO</li>
+                <li><strong>Generalized Markup and serialization:</strong> SGML, XML, YAML, JSON</li>
+                <li><strong>Stylesheets and Layout:</strong> PostScript, CSS/LessCSS, XSLT + XSL-FO</li>
                 <li><strong>Hypertext Markup and Layout:</strong> HTML, XHTML</li>
-                <li><strong>Document Markup:</strong> L<sup>A</sup>T<sub>E</sub>X</li>
+                <li><strong>Document Markup:</strong> L<sup>A</sup>T<sub>E</sub>X, Markdown, ReStructured Text (reST), POD (perldoc)</li>
                 <li><strong>Text Search:</strong> Regular Expressions <em>(POSIX, Perl, Python, and other extended forms)</em></li>
                 <li><strong>Object Schema:</strong> CORBA IDL, XML Schema, Relax NG</li>
                 <li><strong>Database Schema and Querying:</strong> SQL</li>
@@ -294,6 +302,47 @@
 
           <section id="projects" class="nav-target" style="padding-top: 192px; margin-top: -192px">
             <h2>Significant Projects and Responsibilities</h2>
+
+            <section class="project">
+              <h3 id="xiocom" class="client">Xiocom Wireless:</h3>
+              <ul>
+                <li>
+                  Designed and built XOS, an OpenWrt-based embedded
+                  Linux on an IXP4xx platform, for large-scale
+                  wireless networks.
+                </li>
+                <li>
+                  Designed and developed a single-file XOS image,
+                  featuring the easy field upgrade process of an
+                  enterprise-grade router (i.e., copy a single file,
+                  select it, reboot.)
+                </li>
+                <li>
+                  Designed a JSON config schema, easily digested by
+                  tools, with direct translation into UI. Design goal
+                  was conceptual integrity of the schema and user
+                  experience. Built an extensible, retargetable
+                  expansion of the configuration into the underlying
+                  platform's format.
+                </li>
+                <li>
+                  Maintained an inherited, legacy, Linux for the
+                  Soekris x86 platform through transition to XOS on
+                  new hardware. Contributed to maintenance of an
+                  inherited captive-portal and billing system during
+                  the transition.
+                </li>
+                <li>
+                  Designed, built, and deployed tools for safe remote
+                  update of legacy platform code and configuration.
+                </li>
+                <li>
+                  Lead a team of four junior developers, mentoring on
+                  debugging technique and comprehension of complex,
+                  cross-platform systems.
+                </li>
+              </ul>
+            </section>
 
             <section class="project">
               <h3 id="infoblox" class="client">Infoblox, Inc.:</h3>
