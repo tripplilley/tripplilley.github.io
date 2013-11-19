@@ -17,6 +17,15 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+    <!-- @@ HACK: quick fix to suppress nav when printing -->
+    <style>
+      @media print {
+        #leftside {
+          display: none;
+        }
+      }
+    </style>
+
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon"                                href="../assets/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
