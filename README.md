@@ -1,2 +1,2 @@
-tripplilley.github.com
-======================
+tripplilley.github.io
+=====================
