@@ -1,15 +1,27 @@
-# humanstxt.org/
-# The humans responsible & technology colophon
+/* humans.txt - https://humanstxt.org/ */
 
-# TEAM
+/* TEAM */
+  Eponym: Tripp Lilley
+  URL: https://tripplilley.com/
+  Email: tripplilley+humans.txt@gmail.com
+  Twitter: @tripplilley
+  Location: Las Piñas, Metro Manila, Philippines
 
-    <name> -- <role> -- <twitter>
 
-# THANKS
+/* THANKS */
+  Existence: Mom & Dad
 
-    <name>
+  Continued Existence: Niza
 
-# TECHNOLOGY COLOPHON
+  Assistance: JB
 
-    HTML5, CSS3
-    jQuery, Modernizr
+  Conscience: Jen
+
+  Constance: Irene
+
+
+/* SITE */
+  Last update: 2023-03-12
+  Standards: XHTML, CSS3,
+  Components: Twitter Bootstrap
+  Software: Emacs, git, GitHub Pages
